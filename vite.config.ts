@@ -4,24 +4,18 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: '',
-  build: {
-    outDir: 'dist',
-    sourcemap: true,
-    emptyOutDir: true,
-    assetsDir: 'assets',
-    rollupOptions: {
-      input: path.resolve(__dirname, 'index.html'),
-      output: {
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
-      }
-    }
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-    }
-  }
+    },
+  },
+  build: {
+    outDir: 'dist',
+    minify: 'terser',
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      },
+    },
+  },
 });
