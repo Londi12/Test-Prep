@@ -47,11 +47,12 @@
   }
 
   .btn {
-    @apply transition duration-300 ease-in-out;
+    @apply transition-all duration-300 ease-in-out transform;
     background: linear-gradient(to right, #3b82f6, #1e40af);
   }
 
   .btn:hover {
+    @apply scale-105;
     background: linear-gradient(to right, #1e40af, #3b82f6);
   }
 
@@ -75,5 +76,79 @@
 
   .gradient-bg {
     @apply bg-gradient-to-r from-blue-700 to-indigo-800;
+  }
+
+  .fade-in {
+    @apply animate-in fade-in duration-500;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-200 ease-in-out hover:-translate-y-1;
+  }
+
+  .pulse-on-hover:hover {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .8;
+    }
+  }
+
+  .page-transition {
+    @apply transition-opacity duration-300 ease-in-out;
+  }
+
+  .page-enter {
+    @apply opacity-0;
+  }
+
+  .page-enter-active {
+    @apply opacity-100;
+  }
+
+  .hint-button {
+    @apply transition-all duration-300 ease-in-out;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  }
+
+  .hint-button:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    transform: scale(1.05);
+  }
+
+  .hint-panel {
+    @apply bg-gradient-to-r from-blue-50 to-sky-50 border border-blue-200 rounded-lg p-4 shadow-lg;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.2);
+    }
+    to {
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+    }
+  }
+
+  .scratch-pad {
+    @apply bg-white rounded-lg shadow-lg border border-gray-200 p-4 mt-4;
+    min-height: 200px;
+  }
+
+  .math-input {
+    @apply bg-gray-50 border border-gray-300 rounded-lg p-2 w-full font-mono;
+  }
+
+  .step-builder {
+    @apply space-y-4 bg-white rounded-lg shadow-md p-4 border-l-4 border-blue-500;
+  }
+
+  .step-item {
+    @apply bg-gray-50 rounded p-3 transition-all duration-200 hover:bg-gray-100;
   }
 }

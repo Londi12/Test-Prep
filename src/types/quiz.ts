@@ -1,4 +1,9 @@
-export type QuestionType = 'multiple-choice' | 'short-answer' | 'true-false' | 'multiple-select' | 'matching' | 'essay' | 'fill-blanks';
+export type QuestionType = 'multiple-choice' | 'short-answer' | 'true-false' | 'multiple-select' | 'matching' | 'essay' | 'fill-blanks' | 'math';
+
+export interface Step {
+  explanation: string;
+  math?: string;
+}
 
 export interface BaseQuestion {
   id: number;
@@ -7,6 +12,8 @@ export interface BaseQuestion {
   explanation?: string;
   marks?: number;
   context?: string;
+  requiresMathInput?: boolean;
+  solutionSteps?: Step[];
 }
 
 export interface MultipleChoiceQuestion extends BaseQuestion {
@@ -19,6 +26,7 @@ export interface ShortAnswerQuestion extends BaseQuestion {
   type: 'short-answer';
   correctAnswer: string;
   acceptableAnswers?: string[]; // Alternative correct answers
+  isLatex?: boolean; // For math equations
 }
 
 export interface TrueFalseQuestion extends BaseQuestion {
@@ -52,6 +60,13 @@ export interface FillBlanksQuestion extends BaseQuestion {
   correctAnswers: string[]; // Answers in order of blanks
 }
 
+export interface MathQuestion extends BaseQuestion {
+  type: 'math';
+  correctAnswer: string; // LaTeX format
+  acceptableAnswers?: string[]; // Alternative correct answers in LaTeX
+  steps?: Step[];
+}
+
 export type Question = 
   | MultipleChoiceQuestion 
   | ShortAnswerQuestion 
@@ -59,7 +74,8 @@ export type Question =
   | MultipleSelectQuestion 
   | MatchingQuestion 
   | EssayQuestion 
-  | FillBlanksQuestion;
+  | FillBlanksQuestion
+  | MathQuestion;
 
 export interface Quiz {
   id: string;

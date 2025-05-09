@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Question } from "../types/quiz";
 import { cn } from "@/lib/utils";
 import { MultipleChoiceQuestion } from "./questions/MultipleChoiceQuestion";
@@ -8,6 +8,9 @@ import { MultipleSelectQuestion } from "./questions/MultipleSelectQuestion";
 import { MatchingQuestion } from "./questions/MatchingQuestion";
 import { EssayQuestion } from "./questions/EssayQuestion";
 import { FillBlanksQuestion } from "./questions/FillBlanksQuestion";
+import { StepByStepBuilder } from "./questions/StepByStepBuilder";
+
+const EditableMathField = React.lazy(() => import('react-mathquill').then(module => ({ default: module.EditableMathField })));
 
 interface QuizQuestionProps {
   question: Question;
@@ -23,6 +26,8 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({
   showResults,
 }) => {
   const renderQuestion = () => {
+    const isMathQuestion = question.type === 'math' || question.requiresMathInput;
+
     switch (question.type) {
       case 'multiple-choice':
         return (
@@ -35,7 +40,33 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({
         );
       
       case 'short-answer':
-        return (
+        return question.isLatex ? (
+          <div className="space-y-4">
+            <Suspense fallback={<div>Loading...</div>}>
+              <EditableMathField
+                latex={selectedAnswer || ''}
+                onChange={(mathField: any) => onAnswerSelected(mathField.latex())}
+                config={{
+                  spaceBehavesLikeTab: true,
+                  leftRightIntoCmdGoes: 'up',
+                  restrictMismatchedBrackets: true,
+                  autoCommands: 'pi theta sqrt sum prod alpha beta gamma',
+                  autoOperatorNames: 'sin cos tan'
+                }}
+              />
+            </Suspense>
+            {question.solutionSteps && !showResults && (
+              <StepByStepBuilder
+                initialSteps={[]}
+                onComplete={(steps) => {
+                  // Store steps along with the answer
+                  onAnswerSelected({ latex: selectedAnswer, steps });
+                }}
+                isMathQuestion={true}
+              />
+            )}
+          </div>
+        ) : (
           <ShortAnswerQuestion
             question={question}
             selectedAnswer={selectedAnswer as string | null}
@@ -93,6 +124,44 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({
             showResults={showResults}
           />
         );
+
+      case 'math':
+        return (
+          <div className="space-y-4">
+            <Suspense fallback={<div>Loading...</div>}>
+              <EditableMathField
+                latex={selectedAnswer?.latex || ''}
+                onChange={(mathField: any) => {
+                  const currentAnswer = selectedAnswer || {};
+                  onAnswerSelected({
+                    ...currentAnswer,
+                    latex: mathField.latex()
+                  });
+                }}
+                config={{
+                  spaceBehavesLikeTab: true,
+                  leftRightIntoCmdGoes: 'up',
+                  restrictMismatchedBrackets: true,
+                  autoCommands: 'pi theta sqrt sum prod alpha beta gamma',
+                  autoOperatorNames: 'sin cos tan'
+                }}
+              />
+            </Suspense>
+            {!showResults && (
+              <StepByStepBuilder
+                initialSteps={selectedAnswer?.steps || []}
+                onComplete={(steps) => {
+                  const currentAnswer = selectedAnswer || {};
+                  onAnswerSelected({
+                    ...currentAnswer,
+                    steps
+                  });
+                }}
+                isMathQuestion={true}
+              />
+            )}
+          </div>
+        );
     }
   };
 
@@ -101,7 +170,7 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({
       {question.marks && (
         <div className="text-sm text-gray-600 mb-2">[{question.marks} marks]</div>
       )}
-      {'context' in question && question.context && (
+      {question.context && (
         <div className="mb-6">
           <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 text-gray-800 leading-relaxed">
             {question.context.split('\n').map((paragraph, idx) => (

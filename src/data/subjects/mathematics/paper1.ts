@@ -6,7 +6,44 @@ export const mathsPaper1Quiz1: Quiz = {
   description: "Practice basic algebraic manipulation and equations",
   timeLimit: 300,
   questions: [
-    // First few questions from mathsPaper1
+    {
+      id: 1,
+      type: 'math',
+      question: "Solve the quadratic equation: x² - 5x + 6 = 0",
+      context: `This quadratic equation can be solved using factorization.
+      
+Remember:
+• If ax² + bx + c = 0, look for factors p and q where:
+  - p + q = -b
+  - p × q = c
+• The solutions are the values that make (x + p)(x + q) = 0`,
+      marks: 4,
+      correctAnswer: "x = 2 \\text{ or } x = 3",
+      acceptableAnswers: ["x = 3 \\text{ or } x = 2"],
+      steps: [
+        {
+          explanation: "First, identify that a = 1, b = -5, and c = 6",
+          math: "x^2 - 5x + 6 = 0"
+        },
+        {
+          explanation: "Look for two numbers that add to -5 and multiply to give 6",
+          math: "-2 + (-3) = -5 \\text{ and } (-2)(-3) = 6"
+        },
+        {
+          explanation: "Write the equation in factored form",
+          math: "(x - 2)(x - 3) = 0"
+        },
+        {
+          explanation: "Apply the zero product property: if ab = 0, then a = 0 or b = 0",
+          math: "x - 2 = 0 \\text{ or } x - 3 = 0"
+        },
+        {
+          explanation: "Solve each equation",
+          math: "x = 2 \\text{ or } x = 3"
+        }
+      ],
+      requiresMathInput: true
+    },
     {
       id: 1,
       context: `Solve for x:
@@ -25,43 +62,6 @@ x = 4`,
 };
 
 export const mathsPaper1Quiz2: Quiz = {
-  id: "maths-paper1-quiz2",
-  title: "Mathematics Paper 1 - Quiz 2: Advanced Algebra",
-  description: "Practice advanced algebraic concepts",
-  timeLimit: 300,
-  questions: [
-    {
-      id: 1,
-      context: `Factorize completely:
-x² - 5x + 6`,
-      question: "What is the factored form?",
-      options: [
-        "(x + 2)(x + 3)",
-        "(x - 2)(x - 3)",
-        "(x + 2)(x - 3)",
-        "(x - 2)(x + 3)"
-      ],
-      correctAnswer: 1,
-      explanation: "The expression factorizes to (x - 2)(x - 3)"
-    }
-  ]
-};
-
-export const mathsPaper1Quiz3: Quiz = {
-  id: "maths-paper1-quiz3",
-  title: "Mathematics Paper 1 - Quiz 3: Calculus",
-  description: "Practice calculus applications",
-  timeLimit: 300,
-  questions: [
-    {
-      id: 1,
-      context: `A particle moves along a straight line with velocity v(t) = 3t² - 12t + 9 meters per second`,
-      question: "Find the acceleration at t = 2 seconds",
-      options: ["0 m/s²", "2 m/s²", "4 m/s²", "6 m/s²"],
-      correctAnswer: 0,
-      explanation: "a(t) = 6t - 12, at t = 2: a(2) = 0 m/s²"
-    }
-  ]
 };
 
 export const mathsPaper1: Quiz = {

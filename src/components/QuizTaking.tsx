@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, Suspense } from "react";
 import QuizOption from "@/components/QuizOption";
 import Timer from "@/components/Timer";
 import ProgressBar from "@/components/ProgressBar";
@@ -8,7 +8,11 @@ import Calculator from "@/components/Calculator";
 import { Card, CardContent } from "@/components/ui/card";
 import { Quiz } from "@/types/quiz";
 import { Button } from "@/components/ui/button";
-import { LightbulbIcon } from "lucide-react";
+import { LightbulbIcon, PencilIcon } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+const EditableMathField = React.lazy(() => import('react-mathquill').then(module => ({ default: module.EditableMathField })));
 
 interface QuizTakingProps {
   quiz: Quiz;
@@ -37,11 +41,15 @@ const QuizTaking: React.FC<QuizTakingProps> = ({
   onSubmit,
   onTimeUp
 }) => {
-  const [showHint, setShowHint] = React.useState(false);
-  
+  const [showHint, setShowHint] = useState(false);
+  const [showScratchPad, setShowScratchPad] = useState(false);
+  const [scratchPadContent, setScratchPadContent] = useState("");
+  const [mathInput, setMathInput] = useState("");
+
   // Current question data
   const question = quiz.questions[currentQuestion];
   const isMathQuiz = quiz.id.startsWith('maths-');
+  const requiresMathInput = isMathQuiz || question.type === 'short-answer';
 
   // Generate hint based on question type and content
   const getHint = () => {
@@ -90,33 +98,97 @@ const QuizTaking: React.FC<QuizTakingProps> = ({
       <Card className="mb-6">
         <CardContent className="p-6 md:p-8">
           <div className="flex flex-col gap-4">
-            <div className="w-full">
-              <QuizQuestion
-                question={question}
-                selectedAnswer={answers[currentQuestion]}
-                onAnswerSelected={(answer) => onSelectAnswer(currentQuestion, answer)}
-                showResults={false}
-              />
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex-1">
+                <QuizQuestion
+                  question={question}
+                  selectedAnswer={answers[currentQuestion]}
+                  onAnswerSelected={(answer) => onSelectAnswer(currentQuestion, answer)}
+                  showResults={false}
+                />
+              </div>
+              
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className={`hint-button flex items-center gap-2 ${showHint ? 'bg-blue-50' : ''}`}
+                  onClick={() => setShowHint(!showHint)}
+                >
+                  <LightbulbIcon className={`w-5 h-5 ${showHint ? 'text-yellow-500' : 'text-blue-500'}`} />
+                  {showHint ? "Hide Hint" : "Need a Hint?"}
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className={`flex items-center gap-2 ${showScratchPad ? 'bg-gray-100' : ''}`}
+                  onClick={() => setShowScratchPad(!showScratchPad)}
+                >
+                  <PencilIcon className="w-4 h-4" />
+                  {showScratchPad ? "Hide Workspace" : "Show Workspace"}
+                </Button>
+              </div>
             </div>
-            
-            <div className="flex items-center gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-yellow-600 border-yellow-200 hover:bg-yellow-50 hover:text-yellow-700 transition-colors"
-                onClick={() => setShowHint(!showHint)}
-              >
-                <span className="mr-2" role="img" aria-label="hint">💡</span>
-                {showHint ? "Hide Hint" : "Show Hint"}
-              </Button>
-            </div>
-            
+
             {showHint && (
-              <div className="p-4 bg-gradient-to-r from-yellow-50 to-amber-50 border border-yellow-200 rounded-lg shadow-sm">
-                <p className="text-sm text-yellow-800 leading-relaxed">
-                  <span className="font-semibold">Hint: </span>
-                  {getHint()}
-                </p>
+              <div className="hint-panel">
+                <div className="flex items-start gap-2">
+                  <LightbulbIcon className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-1" />
+                  <p className="text-blue-800 leading-relaxed">{getHint()}</p>
+                </div>
+              </div>
+            )}
+
+            {showScratchPad && (
+              <div className="space-y-4">
+                <Tabs defaultValue="notes" className="w-full">
+                  <TabsList>
+                    <TabsTrigger value="notes">Notes</TabsTrigger>
+                    {requiresMathInput && <TabsTrigger value="math">Math Input</TabsTrigger>}
+                  </TabsList>
+                  
+                  <TabsContent value="notes">
+                    <Textarea
+                      placeholder="Use this space for your calculations and notes..."
+                      value={scratchPadContent}
+                      onChange={(e) => setScratchPadContent(e.target.value)}
+                      className="scratch-pad font-mono"
+                    />
+                  </TabsContent>
+                  
+                  {requiresMathInput && (
+                    <TabsContent value="math">
+                      <div className="space-y-4">
+                        <Suspense fallback={<div>Loading Math Input...</div>}>
+                          <EditableMathField
+                            latex={mathInput}
+                            onChange={(mathField: any) => {
+                              setMathInput(mathField.latex());
+                            }}
+                            config={{
+                              spaceBehavesLikeTab: true,
+                              leftRightIntoCmdGoes: 'up',
+                              restrictMismatchedBrackets: true,
+                              autoCommands: 'pi theta sqrt sum prod alpha beta gamma',
+                              autoOperatorNames: 'sin cos tan'
+                            }}
+                          />
+                        </Suspense>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => {
+                            const answer = answers[currentQuestion] || '';
+                            onSelectAnswer(currentQuestion, answer + mathInput);
+                          }}
+                        >
+                          Insert Math
+                        </Button>
+                      </div>
+                    </TabsContent>
+                  )}
+                </Tabs>
               </div>
             )}
           </div>
