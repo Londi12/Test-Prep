@@ -7,15 +7,15 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-    },
+    }
   },
   build: {
     outDir: 'dist',
-    minify: 'terser',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    sourcemap: true,
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-      },
-    },
-  },
+      input: path.resolve(__dirname, 'index.html')
+    }
+  }
 });
