@@ -2,22 +2,26 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  plugins: [react()],
+  base: '',
   build: {
     outDir: 'dist',
     sourcemap: true,
     emptyOutDir: true,
-  },
-  server: {
-    host: true,
-    port: 8080,
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: path.resolve(__dirname, 'index.html'),
+      output: {
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    }
   },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-    },
-  },
-  plugins: [react()],
+    }
+  }
 });
