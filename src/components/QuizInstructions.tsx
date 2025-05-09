@@ -1,8 +1,9 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { formatTime } from "@/lib/quizHelpers";
-import { Quiz, Question } from "@/types/quiz";
+import { Quiz } from "@/types/quiz";
 import { Loader2 } from "lucide-react";
 
 interface QuizInstructionsProps {
@@ -43,12 +44,7 @@ const QuizInstructions: React.FC<QuizInstructionsProps> = ({
     );
   }
 
-  // Get counts of each question type
-  const questionTypes = quiz.questions.reduce((acc, q) => {
-    acc[q.type] = (acc[q.type] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
-
+  // Default time limit if not specified
   const timeLimit = quiz.timeLimit || quiz.questions.length * 60;
 
   return (
@@ -70,66 +66,15 @@ const QuizInstructions: React.FC<QuizInstructionsProps> = ({
           <div className="border-l-4 border-blue-500 pl-4 py-2">
             <h3 className="font-semibold text-lg">Questions</h3>
             <p>
-              This quiz contains <span className="font-medium">{quiz.questions.length} questions</span>:
+              This quiz contains <span className="font-medium">{quiz.questions.length} multiple-choice questions</span>.
             </p>
-            <ul className="mt-2 space-y-1">
-              {Object.entries(questionTypes).map(([type, count]) => (
-                <li key={type} className="text-gray-700">
-                  • {count} {type.replace('-', ' ')} question{count > 1 ? 's' : ''}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="border-l-4 border-blue-500 pl-4 py-2">
-            <h3 className="font-semibold text-lg">Question Types</h3>
-            <div className="space-y-3 mt-2">
-              {questionTypes['multiple-choice'] && (
-                <p>
-                  <span className="font-medium">Multiple Choice:</span> Select one correct answer from the given options.
-                </p>
-              )}
-              {questionTypes['true-false'] && (
-                <p>
-                  <span className="font-medium">True/False:</span> Select whether the statement is true or false.
-                </p>
-              )}
-              {questionTypes['short-answer'] && (
-                <p>
-                  <span className="font-medium">Short Answer:</span> Type a brief response to the question.
-                </p>
-              )}
-              {questionTypes['essay'] && (
-                <p>
-                  <span className="font-medium">Essay:</span> Write a detailed response. Pay attention to any word limits.
-                </p>
-              )}
-              {questionTypes['fill-blank'] && (
-                <p>
-                  <span className="font-medium">Fill in the Blanks:</span> Complete the sentence by filling in the missing words.
-                </p>
-              )}
-            </div>
           </div>
 
           <div className="border-l-4 border-blue-500 pl-4 py-2">
             <h3 className="font-semibold text-lg">Scoring</h3>
-            <div className="space-y-2">
-              <p>
-                • Multiple choice and true/false questions are automatically scored
-              </p>
-              <p>
-                • Short answer questions are checked against accepted answers
-              </p>
-              {questionTypes['essay'] && (
-                <p>
-                  • Essay questions may be manually reviewed
-                </p>
-              )}
-              <p>
-                • No points are deducted for incorrect answers
-              </p>
-            </div>
+            <p>
+              Each correct answer is worth <span className="font-medium">1 point</span>. No points are deducted for incorrect answers.
+            </p>
           </div>
 
           <div className="border-l-4 border-blue-500 pl-4 py-2">

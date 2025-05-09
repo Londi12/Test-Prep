@@ -2,63 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap');
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --background: 220 33% 98%;
+    --foreground: 224 71.4% 4.1%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 224 71.4% 4.1%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --popover-foreground: 224 71.4% 4.1%;
+    
+    --primary: 262 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    
+    --accent: 262 83.3% 57.8%;
+    --accent-foreground: 220.9 39.3% 11%;
+    
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-
-    --radius: 0.5rem;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83.3% 57.8%;
+    
+    --radius: 0.75rem;
   }
 
   html {
     scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
   }
 }
 
 @layer components {
+  .logo {
+    @apply font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
   .card {
     @apply transition-all duration-300 ease-in-out bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2;
-    background: linear-gradient(145deg, #ffffff, #f0f4f8);
+    background: linear-gradient(145deg, #ffffff, #f8f7ff);
   }
 
   .btn {
     @apply transition-all duration-300 ease-in-out transform;
-    background: linear-gradient(to right, #3b82f6, #1e40af);
+    background: linear-gradient(to right, #7c3aed, #6d28d9);
   }
 
   .btn:hover {
     @apply scale-105;
-    background: linear-gradient(to right, #1e40af, #3b82f6);
+    background: linear-gradient(to right, #6d28d9, #7c3aed);
   }
 
   .card-icon {
     @apply rounded-full p-2 inline-flex items-center justify-center text-white;
-    background: linear-gradient(to bottom, #3b82f6, #1e40af);
+    background: linear-gradient(to bottom, #7c3aed, #6d28d9);
   }
 
   .card-link {

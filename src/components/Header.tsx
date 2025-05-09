@@ -1,102 +1,75 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
-import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user } = useAuth();
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const { user, logout } = useAuth();
 
   return (
-    <header className="bg-white shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <Link to="/" className="text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors duration-200">
-              Quiz Haven
-            </Link>
-          </div>
-          
-          {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 px-3 py-2 transition-colors duration-200 hover-lift">
-              Home
-            </Link>
-            
-            {user ? (
-              <div className="flex items-center space-x-4">
-                <Link to="/dashboard">
-                  <Button variant="outline" className="hover-lift transition-all duration-200">Dashboard</Button>
-                </Link>
-              </div>
-            ) : (
-              <div className="flex items-center space-x-4">
-                <Link to="/login">
-                  <Button variant="outline" className="hover-lift transition-all duration-200">Sign In</Button>
-                </Link>
-                <Link to="/register">
-                  <Button className="hover-lift transition-all duration-200">Sign Up</Button>
-                </Link>
-              </div>
-            )}
-          </div>
-          
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-gray-500 hover:text-gray-700 focus:outline-none transition-colors duration-200"
-            >
-              {isMenuOpen ? (
-                <X className="w-6 h-6 transform transition-transform duration-200 rotate-0 hover:rotate-90" />
-              ) : (
-                <Menu className="w-6 h-6 transform transition-transform duration-200 hover:scale-110" />
-              )}
-            </button>
-          </div>
-        </div>
-        
-        {/* Mobile menu */}
-        <div className={cn(
-          "md:hidden py-4 space-y-3 transition-all duration-300 ease-in-out",
-          isMenuOpen 
-            ? "opacity-100 transform translate-y-0" 
-            : "opacity-0 transform -translate-y-4 pointer-events-none"
-        )}>
-          <Link 
-            to="/" 
-            className="block text-gray-700 hover:text-blue-600 px-3 py-2 transition-colors duration-200 hover-lift"
-            onClick={() => setIsMenuOpen(false)}
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between">
+        <Link to="/" className="flex items-center space-x-2">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-primary"
           >
+            <path
+              d="M16 2L3 9L16 16L29 9L16 2Z"
+              fill="currentColor"
+              fillOpacity="0.3"
+            />
+            <path
+              d="M3 16L16 23L29 16"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M3 23L16 30L29 23"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span className="logo">Matrickonnekt</span>
+        </Link>
+
+        <nav className="hidden md:flex items-center space-x-6">
+          <Link to="/" className="text-foreground/60 hover:text-foreground transition-colors">
             Home
           </Link>
-          
+          <Link to="/subjects" className="text-foreground/60 hover:text-foreground transition-colors">
+            Subjects
+          </Link>
+          <Link to="/contact" className="text-foreground/60 hover:text-foreground transition-colors">
+            Contact
+          </Link>
+        </nav>
+
+        <div className="flex items-center space-x-4">
           {user ? (
-            <Link 
-              to="/dashboard"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <Button variant="outline" className="w-full hover-lift transition-all duration-200">Dashboard</Button>
-            </Link>
+            <>
+              <Link to="/dashboard">
+                <Button variant="ghost">Dashboard</Button>
+              </Link>
+              <Button variant="outline" onClick={logout}>Logout</Button>
+            </>
           ) : (
-            <div className="space-y-2">
-              <Link 
-                to="/login"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Button variant="outline" className="w-full hover-lift transition-all duration-200">Sign In</Button>
+            <>
+              <Link to="/login">
+                <Button variant="ghost">Login</Button>
               </Link>
-              <Link 
-                to="/register"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Button className="w-full hover-lift transition-all duration-200">Sign Up</Button>
+              <Link to="/register">
+                <Button>Get Started</Button>
               </Link>
-            </div>
+            </>
           )}
         </div>
       </div>
