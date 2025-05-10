@@ -8,53 +8,24 @@ export const accountingPaper2Quiz1: Quiz = {
   questions: [
     {
       id: 1,
-      question: "Which cost behavior remains constant per unit but changes in total as activity changes?",
-      options: ["Fixed Cost", "Variable Cost", "Mixed Cost", "Step Cost"],
+      context: `Manufacturing Cost Analysis:
+
+Johnson Manufacturing Company
+Monthly Production Data:
+• Units produced: 1,000
+• Direct materials: R50 per unit
+• Direct labor: R30 per unit
+• Factory rent: R20,000 fixed
+• Utilities: R10,000 + R5 per unit
+• Supervisor salary: R15,000 fixed
+
+Calculate total cost at:
+1. Current level (1,000 units)
+2. If production increases to 1,200 units`,
+      question: "What is the total variable cost per unit?",
+      options: ["R80", "R85", "R90", "R95"],
       correctAnswer: 1,
-      explanation: "Variable costs remain constant per unit but change in total proportionally with activity levels"
-    },
-    {
-      id: 2,
-      question: "What is a mixed cost?",
-      options: [
-        "A cost that is always fixed",
-        "A cost with both fixed and variable components",
-        "A cost that is always variable",
-        "A cost that changes randomly"
-      ],
-      correctAnswer: 1,
-      explanation: "Mixed costs contain both fixed and variable components"
-    },
-    {
-      id: 3,
-      question: "Which cost remains constant in total but changes per unit as activity changes?",
-      options: ["Variable Cost", "Mixed Cost", "Fixed Cost", "Step Cost"],
-      correctAnswer: 2,
-      explanation: "Fixed costs remain constant in total but decrease per unit as activity increases"
-    },
-    {
-      id: 4,
-      question: "What is a step cost?",
-      options: [
-        "A cost that changes gradually",
-        "A fixed cost that changes at specific activity levels",
-        "A purely variable cost",
-        "A mixed cost"
-      ],
-      correctAnswer: 1,
-      explanation: "Step costs remain fixed within certain ranges but change significantly at specific activity levels"
-    },
-    {
-      id: 5,
-      question: "Which cost would be considered direct?",
-      options: [
-        "Factory utilities",
-        "Materials used in a specific product",
-        "Supervisor salary",
-        "Building insurance"
-      ],
-      correctAnswer: 1,
-      explanation: "Direct costs can be easily traced to specific products, like materials used in production"
+      explanation: "Variable costs per unit:\n1. Direct materials: R50\n2. Direct labor: R30\n3. Variable portion of utilities: R5\nTotal variable cost per unit = R85"
     }
   ]
 };

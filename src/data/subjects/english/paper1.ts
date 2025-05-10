@@ -203,6 +203,144 @@ export const englishPaper1Quiz3: Quiz = {
   ]
 };
 
+export const englishPaper1Quiz4: Quiz = {
+  id: "english-paper1-quiz4",
+  title: "English Paper 1 - Quiz 4: Common Misconceptions",
+  description: "Review and correct common misconceptions in English language usage and analysis",
+  timeLimit: 300,
+  questions: [
+    {
+      id: 1,
+      context: `Common Misconception:
+"A thesis statement should be the first sentence
+of your essay introduction."
+
+Correct Understanding:
+1. Introduction should:
+   • Start with context/hook
+   • Build background
+   • Present thesis near end
+2. Thesis placement:
+   • Usually last sentence of intro
+   • Acts as bridge to body
+   • Sets up essay structure
+3. Purpose:
+   • Guide reader expectations
+   • Preview main arguments
+   • Show essay direction`,
+      question: "Where should a thesis statement appear in an introduction?",
+      options: [
+        "As the very first sentence",
+        "Near or at the end of introduction",
+        "In the middle paragraph",
+        "In the conclusion"
+      ],
+      correctAnswer: 1,
+      explanation: "The thesis should come after context and background, usually at the end of the introduction where it can naturally lead into the body paragraphs."
+    },
+    {
+      id: 2,
+      context: `Common Misconception:
+"Literary devices are just fancy decorations
+that authors use to make their writing pretty."
+
+Correct Understanding:
+1. Literary devices:
+   • Serve specific purposes
+   • Enhance meaning
+   • Support themes
+   • Create effects
+2. Examples:
+   • Metaphors reveal connections
+   • Imagery creates atmosphere
+   • Symbolism deepens meaning
+   • Structure reflects content`,
+      question: "What is the primary purpose of literary devices?",
+      options: [
+        "To make writing sound sophisticated",
+        "To convey meaning and enhance themes",
+        "To decorate the text",
+        "To confuse readers"
+      ],
+      correctAnswer: 1,
+      explanation: "Literary devices are tools that help writers convey deeper meanings, support themes, and create specific effects, not just decorative elements."
+    }
+  ]
+};
+
+export const englishPaper1Quiz5: Quiz = {
+  id: "english-paper1-quiz5",
+  title: "English Paper 1 - Quiz 5: Exam Technique",
+  description: "Learn effective strategies for English Language examinations",
+  timeLimit: 300,
+  questions: [
+    {
+      id: 1,
+      context: `Approaching Comprehension Questions:
+
+Given: A complex literary passage with
+multiple layers of meaning.
+
+Effective Strategy:
+1. First reading (3 min):
+   • Get overall meaning
+   • Note main ideas
+   • Mark key words
+   • Identify tone/mood
+
+2. Second reading (5 min):
+   • Analyze details
+   • Note literary devices
+   • Find evidence
+   • Consider implications
+
+3. Answering (12 min):
+   • Quote relevant parts
+   • Explain significance
+   • Link to question
+   • Check marking allocation`,
+      question: "Why is a two-reading approach recommended for comprehension?",
+      options: [
+        "To use more time",
+        "First for overview, second for detail",
+        "To memorize the text",
+        "To practice reading"
+      ],
+      correctAnswer: 1,
+      explanation: "The first reading provides overall understanding, while the second allows for detailed analysis and evidence gathering."
+    },
+    {
+      id: 2,
+      context: `Essay Writing Strategy:
+
+Poor conclusion example:
+"In conclusion, I have written about social media."
+
+Better conclusion:
+"While social media has revolutionized communication,
+its impact on personal relationships remains complex.
+As shown through the examples discussed, careful
+management of digital interactions is crucial for
+maintaining meaningful connections in the modern age."
+
+Key differences:
+1. Summarizes main arguments
+2. Links to essay question
+3. Shows thoughtful reflection
+4. Provides closure`,
+      question: "What makes an effective essay conclusion?",
+      options: [
+        "Simply stating 'in conclusion'",
+        "Summarizing and reflecting on main arguments",
+        "Adding new points",
+        "Repeating the introduction"
+      ],
+      correctAnswer: 1,
+      explanation: "An effective conclusion synthesizes the main arguments, reflects on their significance, and provides thoughtful closure without introducing new points."
+    }
+  ]
+};
+
 export const englishPaper1: Quiz = {
   id: "english-paper1",
   title: "English HL Paper 1 - Language in Context",

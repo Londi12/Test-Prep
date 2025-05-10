@@ -8,43 +8,30 @@ export const accountingPaper1Quiz1: Quiz = {
   questions: [
     {
       id: 1,
-      question: "Which financial statement shows a company's revenues and expenses?",
-      options: ["Balance Sheet", "Cash Flow Statement", "Income Statement", "Statement of Shareholders' Equity"],
-      correctAnswer: 2,
-      explanation: "The Income Statement shows revenues, expenses, and resulting profit or loss over a specific period"
-    },
-    {
-      id: 2,
-      question: "What is the accounting equation?",
-      options: ["Assets = Liabilities + Owner's Equity", "Assets = Liabilities - Owner's Equity", "Assets + Liabilities = Owner's Equity", "Assets - Liabilities = Owner's Equity"],
+      context: `Company XYZ's financial information:
+Sales Revenue: R500,000
+Cost of Sales: R300,000
+Operating Expenses: R100,000
+Interest Expense: R20,000
+Tax Rate: 28%
+
+Calculate:
+1. Gross Profit = Revenue - Cost of Sales
+   = R500,000 - R300,000 = R200,000
+
+2. Operating Profit = Gross Profit - Operating Expenses
+   = R200,000 - R100,000 = R100,000
+
+3. Profit Before Tax = Operating Profit - Interest
+   = R100,000 - R20,000 = R80,000
+
+4. Tax = R80,000 × 28% = R22,400
+
+5. Net Profit = R80,000 - R22,400 = R57,600`,
+      question: "Calculate the company's Net Profit",
+      options: ["R57,600", "R80,000", "R100,000", "R200,000"],
       correctAnswer: 0,
-      explanation: "The fundamental accounting equation is: Assets = Liabilities + Owner's Equity"
-    },
-    {
-      id: 3,
-      question: "Which of these is NOT a current asset?",
-      options: ["Cash", "Accounts Receivable", "Equipment", "Inventory"],
-      correctAnswer: 2,
-      explanation: "Equipment is a long-term (non-current) asset"
-    },
-    {
-      id: 4,
-      question: "What is working capital?",
-      options: ["Total assets", "Current assets - Current liabilities", "Fixed assets", "Long-term debt"],
-      correctAnswer: 1,
-      explanation: "Working capital is the difference between current assets and current liabilities"
-    },
-    {
-      id: 5,
-      question: "What does GAAP stand for?",
-      options: [
-        "Global Accounting and Principles",
-        "Generally Accepted Accounting Principles",
-        "General Accounting and Payroll Principles",
-        "Global Accounting Practices and Procedures"
-      ],
-      correctAnswer: 1,
-      explanation: "GAAP stands for Generally Accepted Accounting Principles"
+      explanation: "Step by step calculation:\n1. Gross Profit = R200,000\n2. Operating Profit = R100,000\n3. Profit Before Tax = R80,000\n4. Tax (28%) = R22,400\n5. Net Profit = R57,600"
     }
   ]
 };
@@ -192,6 +179,78 @@ export const accountingPaper1Quiz3: Quiz = {
       ],
       correctAnswers: [0, 1, 2, 4],
       explanation: "The fundamental principles of accounting ethics include integrity, professional competence, objectivity, and confidentiality. Maximum profit is not an ethical principle."
+    }
+  ]
+};
+
+export const accountingPaper1Quiz4: Quiz = {
+  id: "accounting-paper1-quiz4",
+  title: "Accounting Paper 1 - Quiz 4: Exam Technique",
+  description: "Learn effective strategies for tackling accounting examinations",
+  timeLimit: 300,
+  questions: [
+    {
+      id: 1,
+      context: `Approaching Financial Statements:
+
+Given: Trial Balance and additional information
+
+Effective Strategy:
+1. Initial review (5 min):
+   • Read all information carefully
+   • Note adjustments needed
+   • Plan your approach
+   • Check formats required
+
+2. Adjustments (10 min):
+   • List all adjustments
+   • Calculate effects
+   • Prepare journal entries
+   • Note affected accounts
+
+3. Statement preparation (25 min):
+   • Follow standard format
+   • Show calculations clearly
+   • Cross-reference items
+   • Check balancing`,
+      question: "Why should you list all adjustments before starting the statements?",
+      options: [
+        "To use more paper",
+        "To ensure all items are properly processed",
+        "To practice writing",
+        "To look organized"
+      ],
+      correctAnswer: 1,
+      explanation: "Listing adjustments first ensures no items are missed and helps understand their full impact on the financial statements."
+    },
+    {
+      id: 2,
+      context: `Ratio Analysis Strategy:
+
+Poor approach:
+Just calculating numbers without context
+
+Better approach:
+1. Calculate ratios (5 min)
+2. Compare with:
+   • Previous years
+   • Industry standards
+   • Competitors
+3. Analyze trends (5 min)
+4. Consider factors:
+   • Economic conditions
+   • Company changes
+   • Market trends
+5. Make recommendations (5 min)`,
+      question: "What makes a good ratio analysis?",
+      options: [
+        "Just showing calculations",
+        "Calculations with context and interpretation",
+        "Listing all possible ratios",
+        "Using complex formulas"
+      ],
+      correctAnswer: 1,
+      explanation: "Good ratio analysis combines accurate calculations with meaningful interpretation in the business context."
     }
   ]
 };

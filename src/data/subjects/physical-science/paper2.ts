@@ -171,13 +171,136 @@ export const physicalSciencePaper2Quiz3: Quiz = {
   ]
 };
 
+export const physicalSciencePaper2Quiz5: Quiz = {
+  id: "physical-science-paper2-quiz5",
+  title: "Physical Science Paper 2 - Quiz 5: Common Misconceptions",
+  description: "Review and correct common misconceptions in chemistry",
+  timeLimit: 300,
+  questions: [
+    {
+      id: 1,
+      context: `Common Misconception:
+"When a chemical bond forms, energy is released.
+Therefore, breaking a bond releases energy."
+
+Correct Understanding:
+1. Bond formation RELEASES energy
+2. Bond breaking REQUIRES energy
+3. Overall energy change depends on:
+   • Energy needed to break reactant bonds
+   • Energy released when product bonds form
+4. Exothermic if more energy released than absorbed
+5. Endothermic if more energy absorbed than released`,
+      question: "Why is breaking chemical bonds an endothermic process?",
+      options: [
+        "Because bonds store energy",
+        "Because energy is needed to overcome bond forces",
+        "Because products have less energy",
+        "Because reactions release heat"
+      ],
+      correctAnswer: 1,
+      explanation: "Breaking bonds requires energy input to overcome the attractive forces between atoms. This is why bond breaking is endothermic."
+    },
+    {
+      id: 2,
+      context: `Common Misconception:
+"Strong acids are strong electrolytes because they
+have strong bonds between H⁺ and the anion."
+
+Correct Understanding:
+1. Strong acids ionize completely in water
+2. Bond strength ≠ degree of ionization
+3. HCl is a strong acid but has weak H-Cl bonds
+4. H₃PO₄ is a weak acid but has strong P-O bonds
+5. Acid strength relates to ease of H⁺ donation`,
+      question: "What determines if an acid is strong or weak?",
+      options: [
+        "The strength of its bonds",
+        "Its concentration in solution",
+        "Its degree of ionization in water",
+        "The size of its molecules"
+      ],
+      correctAnswer: 2,
+      explanation: "An acid's strength is determined by its degree of ionization in water, not by its bond strength or concentration."
+    }
+  ]
+};
+
+export const physicalSciencePaper2Quiz6: Quiz = {
+  id: "physical-science-paper2-quiz6",
+  title: "Physical Science Paper 2 - Quiz 6: Exam Technique",
+  description: "Learn effective strategies for tackling physical science exams",
+  timeLimit: 300,
+  questions: [
+    {
+      id: 1,
+      context: `Approaching Chemical Calculations:
+
+Given question:
+Calculate the concentration of H₂SO₄ needed to
+produce 5.0 g of H₂ gas when reacted with excess Zn.
+Zn + H₂SO₄ → ZnSO₄ + H₂
+
+Strategy:
+1. Write balanced equation
+2. Highlight key information:
+   • Mass H₂ required = 5.0 g
+   • Zn in excess
+3. Plan solution:
+   • Find moles H₂
+   • Use equation ratio
+   • Calculate moles H₂SO₄
+   • Convert to concentration`,
+      question: "Why is writing a balanced equation the first step?",
+      options: [
+        "It's required by the examiner",
+        "To determine stoichiometric relationships",
+        "To practice writing",
+        "To use all information"
+      ],
+      correctAnswer: 1,
+      explanation: "The balanced equation is essential for determining the stoichiometric relationships between reactants and products, which is needed for the calculation."
+    },
+    {
+      id: 2,
+      context: `Data Analysis Strategy:
+
+Given: Graph of temperature vs time for heating curve
+
+Effective approach:
+1. Read title and axes (2 min)
+2. Identify key points:
+   • Phase changes (flat regions)
+   • Temperature ranges
+   • Gradient changes
+3. Link to theory:
+   • Phase change energy
+   • Specific heat capacity
+   • Latent heat
+4. Answer questions:
+   • Quote data points
+   • Show calculations
+   • Explain patterns`,
+      question: "Why should you spend time reading axes before answering?",
+      options: [
+        "To look busy",
+        "To identify units and variables for accurate interpretation",
+        "To memorize numbers",
+        "To check handwriting"
+      ],
+      correctAnswer: 1,
+      explanation: "Understanding the axes helps identify units and variables, ensuring accurate data interpretation and appropriate use of formulae."
+    }
+  ]
+};
+
 export const physicalSciencePaper2: Quiz = {
   id: "physical-science-paper2",
   title: "Physical Sciences - Paper 2: Chemistry",
   description: "Tests understanding of matter and materials, chemical change, and chemical systems. Total marks: 150",
   timeLimit: 10800, // 3 hours
   questions: [
-    // Section A: Multiple Choice & One-Word Items (30 marks)
+    // Section A: Multiple Choice & Terminology (30 marks)
     {
       id: 1,
       context: `Study the periodic table and atomic structure:
@@ -187,104 +310,96 @@ Element X:
 • Mass number: 23
 • Electron configuration: [Ne]3s¹
 
-Given:
-• Atomic mass of Ne = 20
-• Ground state electron config of Ne = 1s²2s²2p⁶`,
-      question: "What is the number of neutrons in element X?",
-      options: ["11", "12", "20", "23"],
+Calculate:
+1. Number of protons = 11
+2. Number of neutrons = 23 - 11 = 12
+3. Number of electrons = 11
+4. Valence electrons = 1`,
+      question: "Which element is X and what is its likely chemical behavior?",
+      options: [
+        "Neon - inert",
+        "Sodium - highly reactive metal",
+        "Magnesium - moderately reactive",
+        "Chlorine - forms anions"
+      ],
       correctAnswer: 1,
-      marks: 2,
-      explanation: "Number of neutrons = Mass number - Atomic number = 23 - 11 = 12"
+      explanation: "Element X is Sodium (Na):\n1. Atomic number 11 = number of protons\n2. One valence electron (3s¹)\n3. Forms Na⁺ by losing one electron\n4. Highly reactive alkali metal",
+      marks: 3
     },
 
-    // Section B: Chemical Change (40 marks)
+    // Section B: Chemical Bonding & Matter (40 marks)
     {
       id: 10,
+      context: `Study the reaction:
+2Na + Cl₂ → 2NaCl
+
+Bonding analysis:
+1. Na loses 1e⁻ to form Na⁺
+2. Cl gains 1e⁻ to form Cl⁻
+3. Ionic bond forms between Na⁺ and Cl⁻
+4. Crystal lattice structure forms`,
+      question: "Analyze the bonding in sodium chloride formation. Include:\n1. Electron transfer process\n2. Energy changes\n3. Crystal structure\n4. Physical properties",
       type: "essay",
-      context: `Practical Investigation: Reaction Rates
-
-Equipment:
-• CaCO₃ (marble chips)
-• Different concentrations of HCl
-• Gas syringe
-• Stopwatch
-
-Method:
-1. Add 2g marble chips to 50mL HCl
-2. Measure volume of CO₂ every 30 seconds
-3. Repeat with different [HCl]
-
-Data collected:
-Time(s)  Volume CO₂ (mL)
-         2M HCl  1M HCl  0.5M HCl
-0        0       0       0
-30       45      28      15
-60       82      51      27
-90       98      67      36
-
-Balanced equation:
-CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂`,
-      question: "Analyze this investigation:\n1. Plot appropriate graphs\n2. Calculate initial rates\n3. Explain relationship between [HCl] and rate\n4. Identify factors affecting rate",
       markingCriteria: [
-        "Accurate graphs with proper labels",
-        "Correct rate calculations",
-        "Clear explanation of concentration effect",
-        "Valid discussion of rate factors"
+        "Electron configuration changes",
+        "Energy considerations",
+        "Structure description",
+        "Property explanation"
       ],
       marks: 15,
-      explanation: "Answer should demonstrate understanding of reaction kinetics and data analysis"
+      explanation: "Answer should demonstrate understanding of ionic bonding and structure-property relationships."
     },
 
-    // Section C: Chemical Systems (40 marks)
+    // Section C: Chemical Change (40 marks)
     {
       id: 20,
-      context: `Industrial Production of H₂SO₄:
+      context: `Acid-Base Titration:
 
-Step 1: S + O₂ → SO₂     ΔH = -297 kJ/mol
-Step 2: 2SO₂ + O₂ ⇌ 2SO₃  ΔH = -198 kJ/mol
-Step 3: SO₃ + H₂O → H₂SO₄  ΔH = -130 kJ/mol
+25.0 mL of H₂SO₄ solution titrated with 0.100 M NaOH
+• NaOH used = 40.0 mL
+• Indicator: phenolphthalein
+• Temperature: 25°C
 
-Contact Process Conditions:
-• Temperature: 450°C
-• Pressure: 2-3 atm
-• V₂O₅ catalyst
-• Excess air`,
-      question: "Discuss the Contact Process:\n1. Explain conditions using Le Chatelier's Principle\n2. Role of catalyst\n3. Safety and environmental considerations\n4. Economic factors",
-      type: "essay",
-      markingCriteria: [
-        "Correct application of equilibrium principles",
-        "Understanding of catalyst function",
-        "Valid safety/environmental analysis",
-        "Relevant economic discussion"
-      ],
-      marks: 20,
-      explanation: "Answer should show understanding of industrial processes and chemical equilibrium"
+Balanced equation:
+H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O
+
+Calculate:
+1. Moles NaOH = 0.100 M × 0.0400 L = 0.00400 mol
+2. Mole ratio H₂SO₄:NaOH = 1:2
+3. Moles H₂SO₄ = 0.00400 ÷ 2 = 0.00200 mol
+4. [H₂SO₄] = 0.00200 mol ÷ 0.0250 L = 0.0800 M`,
+      question: "Calculate the concentration of the sulfuric acid solution.",
+      type: "short-answer",
+      correctAnswer: "0.0800 M",
+      marks: 12,
+      explanation: "Solution involves:\n1. Finding moles NaOH used\n2. Using stoichiometric ratio\n3. Finding moles H₂SO₄\n4. Calculating concentration"
     },
 
-    // Section D: Matter & Materials (40 marks)
+    // Section D: Chemical Systems (40 marks)
     {
       id: 30,
-      context: `Organic Chemistry:
+      context: `Industrial Production of Sulfuric Acid:
 
-Compound X undergoes the following reactions:
-1. X + Br₂/UV → C₄H₉Br
-2. X + H₂O/H⁺ → C₄H₉OH
-3. X + HBr → C₄H₉Br
+Contact Process stages:
+1. S + O₂ → SO₂
+2. 2SO₂ + O₂ ⇌ 2SO₃
+3. H₂SO₄ formation
 
-IR Spectrum shows:
-• Strong peak at 3080 cm⁻¹
-• Strong peak at 1645 cm⁻¹
-• No peak at 3300 cm⁻¹`,
-      question: "1. Identify compound X\n2. Write mechanisms for reactions 1-3\n3. Explain IR spectrum peaks\n4. Predict product from X + KMnO₄",
+Conditions for step 2:
+• Temperature: 450°C
+• Pressure: 2-3 atm
+• Catalyst: V₂O₅
+• Equilibrium reaction`,
+      question: "Discuss how the conditions affect the yield of SO₃. Consider:\n1. Le Chatelier's Principle\n2. Rate considerations\n3. Economic factors\n4. Environmental impact",
       type: "essay",
       markingCriteria: [
-        "Correct structure identification",
-        "Accurate reaction mechanisms",
-        "Valid spectral analysis",
-        "Proper product prediction"
+        "Equilibrium analysis",
+        "Kinetic factors",
+        "Economic evaluation",
+        "Environmental awareness"
       ],
       marks: 15,
-      explanation: "Response should demonstrate understanding of organic chemistry and spectroscopy"
+      explanation: "Response should show understanding of industrial processes and chemical equilibrium."
     }
   ]
 };

@@ -16,14 +16,18 @@ export const lifeSciencePaper1Quiz1: Quiz = {
 - Matrix space
 - ATP synthase enzymes]
 
-This organelle is responsible for cellular respiration:
-• Glucose + O₂ → CO₂ + H₂O + Energy (ATP)
-• Process occurs in the inner membrane folds
-• ATP is produced via chemiosmosis`,
+This organelle is responsible for cellular respiration.
+Process:
+1. Glucose + O₂ → CO₂ + H₂O + Energy (ATP)
+2. Occurs in stages:
+   - Glycolysis (cytoplasm)
+   - Krebs cycle (matrix)
+   - Electron transport chain (cristae)
+3. Produces 36-38 ATP molecules per glucose molecule`,
       question: "Which organelle is responsible for energy production in the cell?",
       options: ["Nucleus", "Ribosome", "Mitochondria", "Golgi Apparatus"],
       correctAnswer: 2,
-      explanation: "Mitochondria are known as the 'powerhouse of the cell' because they produce most of the cell's supply of ATP (energy)"
+      explanation: "Mitochondria are the powerhouses of the cell. Key identifying features are:\n1. Double membrane structure\n2. Cristae (inner membrane folds)\n3. Location of ATP production through cellular respiration\n4. Matrix contains enzymes for Krebs cycle"
     },
     {
       id: 2,

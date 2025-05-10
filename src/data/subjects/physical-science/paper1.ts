@@ -8,77 +8,37 @@ export const physicalSciencePaper1Quiz1: Quiz = {
   questions: [
     {
       id: 1,
-      context: `Newton's Laws of Motion describe the relationship between forces and motion:
-      1. First Law: An object remains at rest or in uniform motion unless acted upon by a net force
-      2. Second Law: Force equals mass times acceleration (F = ma)
-      3. Third Law: For every action, there is an equal and opposite reaction
+      context: `A 2 kg object accelerates at 4 m/s² when a force is applied.
 
-Consider a situation where a 2 kg object is accelerating at 4 m/s².`,
-      question: "What is Newton's Second Law of Motion, and what force is acting on the 2 kg object?",
-      options: [
-        "For every action, there is an equal and opposite reaction (F = 8N)",
-        "Force equals mass times acceleration (F = 8N)",
-        "An object in motion stays in motion unless acted upon by an external force (F = 8N)",
-        "Energy cannot be created or destroyed, only transformed (F = 6N)"
-      ],
-      correctAnswer: 1,
-      explanation: "Newton's Second Law states that F = ma. For the 2 kg object: F = 2 kg × 4 m/s² = 8N"
+Solution steps:
+1. Use Newton's Second Law: F = ma
+2. Substitute known values:
+   m = 2 kg
+   a = 4 m/s²
+3. Calculate:
+   F = 2 kg × 4 m/s²
+   F = 8 N`,
+      question: "Calculate the net force acting on the object.",
+      options: ["4 N", "6 N", "8 N", "10 N"],
+      correctAnswer: 2,
+      explanation: "Using Newton's Second Law (F = ma):\n1. Mass (m) = 2 kg\n2. Acceleration (a) = 4 m/s²\n3. Therefore, Force = 2 × 4 = 8 N\nThe force must be 8 N to produce this acceleration."
     },
     {
       id: 2,
-      context: `A ball is thrown horizontally off a cliff with:
-      • Initial velocity = 5 m/s
-      • Mass = 0.5 kg
-      
-To find momentum:
-p = mv = 0.5 kg × 5 m/s = 2.5 kg·m/s`,
-      question: "What is the unit of momentum?",
-      options: ["kg·m/s²", "kg·m/s", "kg/m·s", "kg·m²/s"],
+      context: `A wave has the following properties:
+• Wavelength (λ) = 2 meters
+• Velocity (v) = 4 m/s
+
+To find frequency:
+1. Use wave equation: v = fλ
+2. Rearrange to solve for f: f = v/λ
+3. Substitute values:
+   f = 4 m/s ÷ 2 m
+   f = 2 Hz`,
+      question: "Calculate the frequency of the wave.",
+      options: ["0.5 Hz", "2 Hz", "4 Hz", "8 Hz"],
       correctAnswer: 1,
-      explanation: "Momentum (p) = mass × velocity, so units are kg·m/s"
-    },
-    {
-      id: 3,
-      context: `In a laboratory experiment:
-      • A spring is stretched by different forces
-      • The extension is measured each time
-      • Graph shows a straight line through origin
-      • For every 2N force, extension increases by 4cm`,
-      question: "What is the spring constant k?",
-      options: ["0.25 N/m", "0.5 N/m", "50 N/m", "2 N/m"],
-      correctAnswer: 2,
-      explanation: "Using Hooke's Law F = kx: k = F/x = 2N/0.04m = 50 N/m"
-    },
-    {
-      id: 4,
-      context: `A student measures:
-      • The time (t) taken for a pendulum to complete 20 oscillations
-      • Divides by 20 to get the period (T)
-      • Repeats 3 times and averages
-      
-Results:
-Trial 1: t = 30.2s, T = 1.51s
-Trial 2: t = 30.0s, T = 1.50s
-Trial 3: t = 30.4s, T = 1.52s`,
-      question: "What is the average period of the pendulum?",
-      options: ["1.50s", "1.51s", "1.52s", "1.53s"],
-      correctAnswer: 1,
-      explanation: "Average period = (1.51 + 1.50 + 1.52)/3 = 1.51s"
-    },
-    {
-      id: 5,
-      context: `An object falls freely under gravity:
-      • Initial velocity = 0 m/s
-      • Time of fall = 2s
-      • Acceleration due to gravity = 9.8 m/s²
-      
-Using s = ut + ½at²:
-s = 0 + ½(9.8)(2²)
-s = 19.6 meters`,
-      question: "What distance does the object fall in 2 seconds?",
-      options: ["9.8m", "19.6m", "39.2m", "4.9m"],
-      correctAnswer: 1,
-      explanation: "Using s = ut + ½at², with u=0, a=9.8, t=2: s = ½(9.8)(4) = 19.6m"
+      explanation: "Using the wave equation (v = fλ):\n1. Rearrange to f = v/λ\n2. Substitute v = 4 m/s and λ = 2 m\n3. f = 4/2 = 2 Hz\nThe frequency must be 2 Hz to satisfy the wave equation."
     }
   ]
 };

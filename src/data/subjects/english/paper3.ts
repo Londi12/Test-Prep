@@ -247,27 +247,28 @@ export const englishPaper3: Quiz = {
 2. Write a descriptive piece titled "The Sound of Silence"
 
 3. Write a diary entry reflecting on a moment that changed your perspective on life.`,
-      question: "Write your creative piece considering:\n1. Original and creative approach\n2. Appropriate voice and style\n3. Effective use of literary devices\n4. Engaging content",
+      question: "Write your piece considering:\n1. Appropriate format and style\n2. Creative use of language\n3. Engaging content\n4. Clear structure",
       markingCriteria: [
-        "Content & creativity (20)",
-        "Language & style (10)"
+        "Content & creativity (15)",
+        "Style & language use (10)",
+        "Format & structure (5)"
       ],
       marks: 30,
-      explanation: "Response should show creativity and skilled use of literary techniques."
+      explanation: "Creative writing should show originality and effective use of literary devices."
     },
 
     // Section C: Transactional Writing (20 marks)
     {
       id: 3,
       type: "essay",
-      context: `Choose ONE of the following and write 180-200 words:
+      context: `Choose ONE of the following transactional writing tasks:
 
-1. Write a formal letter to your principal suggesting improvements to the school's recycling program.
+1. Write a formal letter to your local newspaper about the need for better recycling facilities in your area.
 
-2. Write a review of a recent local music festival for your school magazine.
+2. Write a review of a recently released movie for your school magazine.
 
-3. Write a speech for a debate on whether homework should be abolished.`,
-      question: "Write your transactional text following:\n1. Correct format\n2. Appropriate register\n3. Clear purpose\n4. Relevant content",
+3. Write a speech for a career day presentation about the importance of pursuing one's passion.`,
+      question: "Write your piece following:\n1. Correct format for chosen text type\n2. Appropriate register and tone\n3. Clear purpose\n4. Relevant content",
       markingCriteria: [
         "Content & planning (12)",
         "Language use (5)",

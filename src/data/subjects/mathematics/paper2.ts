@@ -83,46 +83,142 @@ cos 30° = adjacent/hypotenuse = 8/16 = 0.866`,
 
 export const mathsPaper2Quiz3: Quiz = {
   id: "maths-paper2-quiz3",
-  title: "Mathematics Paper 2 - Quiz 3: Statistics",
-  description: "Test your knowledge of statistical concepts and analysis",
+  title: "Mathematics Paper 2 - Quiz 3: Statistics & Probability",
+  description: "Test your knowledge of data analysis and probability concepts",
   timeLimit: 300,
   questions: [
     {
       id: 1,
-      question: "What is the mean of the numbers: 2, 4, 8, 10, 16?",
-      context: "Dataset: 2, 4, 8, 10, 16",
-      options: ["6", "8", "10", "12"],
-      correctAnswer: 1,
-      explanation: "Mean = sum of values ÷ number of values = (2 + 4 + 8 + 10 + 16) ÷ 5 = 40 ÷ 5 = 8"
+      type: 'math',
+      context: `Height Data Analysis (in cm):
+165, 168, 170, 170, 172, 175, 175, 176, 178, 180
+
+Statistical Thinking Process:
+1. Order data first
+   Already ordered: 165,168,170,170,172,175,175,176,178,180
+
+2. Find median
+   • n = 10 (even)
+   • Need average of 5th and 6th values
+   • (172 + 175)/2 = 173.5
+
+3. Find quartiles
+   • Lower half: 165,168,170,170,172
+   Q1 = 170
+   • Upper half: 175,175,176,178,180
+   Q3 = 176
+
+4. Calculate IQR
+   • IQR = Q3 - Q1 = 176 - 170 = 6
+
+5. Check for outliers
+   • Lower fence: Q1 - 1.5×IQR = 161
+   • Upper fence: Q3 + 1.5×IQR = 185
+   • No outliers present`,
+      question: "Find the five-number summary and identify any outliers.",
+      correctAnswer: "Min = 165, Q1 = 170, Median = 173.5, Q3 = 176, Max = 180\\text{, No outliers}",
+      markingCriteria: [
+        "Five-number summary",
+        "IQR calculation",
+        "Outlier analysis"
+      ],
+      marks: 8,
+      explanation: "Systematic approach to statistical analysis using quartiles and IQR method"
     },
     {
       id: 2,
-      question: "What is the median of the dataset: 3, 7, 8, 9, 9, 10, 12?",
-      context: "Dataset: 3, 7, 8, 9, 9, 10, 12",
-      options: ["7", "8", "9", "10"],
-      correctAnswer: 2,
-      explanation: "With 7 numbers, the median is the 4th number (middle value). Arranged in order: 3,7,8,9,9,10,12. The 4th number is 9"
+      type: 'math',
+      context: `Probability Problem:
+A bag contains:
+• 3 red marbles
+• 4 blue marbles
+• 5 green marbles
+
+Calculate probability of:
+1. Drawing red first:
+   P(R) = 3/12 = 1/4
+
+2. Drawing blue second without replacement:
+   • If first was red:
+     P(B|R) = 4/11
+   • Total probability = P(R) × P(B|R)
+   = 1/4 × 4/11 = 4/44 = 1/11`,
+      question: "Find P(red then blue without replacement)",
+      correctAnswer: "1/11",
+      markingCriteria: [
+        "Initial probability",
+        "Conditional probability",
+        "Multiplication principle"
+      ],
+      marks: 6,
+      explanation: "Demonstrates use of probability rules and conditional probability"
+    }
+  ]
+};
+
+export const mathsPaper2Quiz4: Quiz = {
+  id: "maths-paper2-quiz4",
+  title: "Mathematics Paper 2 - Quiz 4: Probability & Combinatorics",
+  description: "Test your understanding of probability theory and counting principles",
+  timeLimit: 300,
+  questions: [
+    {
+      id: 1,
+      type: 'math',
+      context: `Combinatorics Problem:
+Seven students must line up for a photo.
+• 3 must be in the front row
+• 4 must be in the back row
+
+Solution Method:
+1. Total arrangements = (ways to choose front row) × (ways to arrange front row) × (ways to arrange back row)
+2. Choose 3 from 7 for front: ⁷C₃
+3. Arrange 3 chosen students: 3!
+4. Arrange remaining 4: 4!
+
+Final calculation:
+= ⁷C₃ × 3! × 4!
+= 35 × 6 × 24
+= 5,040 arrangements`,
+      question: "How many different ways can the students be arranged?",
+      correctAnswer: "5040",
+      markingCriteria: [
+        "Combination calculation",
+        "Permutation application",
+        "Multiplication principle"
+      ],
+      marks: 6,
+      explanation: "Solution demonstrates use of combinations and permutations"
     },
     {
-      id: 3,
-      question: "What type of correlation shows a strong positive relationship?",
-      options: ["Close to -1", "Close to 0", "Close to 1", "Equal to 0"],
-      correctAnswer: 2,
-      explanation: "Correlation coefficient near 1 indicates strong positive correlation"
-    },
-    {
-      id: 4,
-      question: "What measure of spread is least affected by outliers?",
-      options: ["Range", "Variance", "Standard Deviation", "Interquartile Range"],
-      correctAnswer: 3,
-      explanation: "IQR is resistant to outliers as it only considers the middle 50% of data"
-    },
-    {
-      id: 5,
-      question: "In a normal distribution, what percentage of data falls within one standard deviation of the mean?",
-      options: ["50%", "68%", "95%", "99.7%"],
-      correctAnswer: 1,
-      explanation: "Approximately 68% of data falls within one standard deviation of the mean in a normal distribution"
+      id: 2,
+      type: 'math',
+      context: `Tree Diagram Problem:
+A box has:
+• 2 red balls
+• 3 blue balls
+• 4 white balls
+
+Draw two balls without replacement.
+Calculate P(same color):
+
+1. P(both red) = 2/9 × 1/8
+2. P(both blue) = 3/9 × 2/8
+3. P(both white) = 4/9 × 3/8
+
+Total = (2×1)/(9×8) + (3×2)/(9×8) + (4×3)/(9×8)
+= 2/72 + 6/72 + 12/72
+= 20/72
+= 5/18`,
+      question: "Find the probability of drawing two balls of the same color",
+      correctAnswer: "5/18",
+      markingCriteria: [
+        "Tree diagram construction",
+        "Individual probabilities",
+        "Addition of probabilities"
+      ],
+      marks: 8,
+      explanation: "Demonstrates probability tree diagrams and counting techniques"
     }
   ]
 };

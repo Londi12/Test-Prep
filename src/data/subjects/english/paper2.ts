@@ -211,70 +211,57 @@ Of course, I remember everything exactly as it happened. I'm known for my perfec
 export const englishPaper2: Quiz = {
   id: "english-paper2",
   title: "English HL Paper 2 - Literature",
-  description: "Tests understanding of prescribed literary works including poetry, drama, and prose. Answer THREE questions in total, ONE from each section. Total marks: 80",
-  timeLimit: 7200, // 2 hours
+  description: "Tests understanding of prescribed literary works. Total marks: 80",
+  timeLimit: 10800, // 3 hours
   questions: [
-    // Section A: Poetry (30 marks)
+    // Section A: Poetry (40 marks)
     {
       id: 1,
       type: "essay",
-      context: `Study the following poem:
+      context: `"Funeral Blues" by W.H. Auden
 
-"The Highwayman" by Alfred Noyes (Extract)
+Stop all the clocks, cut off the telephone,
+Prevent the dog from barking with a juicy bone,
+Silence the pianos and with muffled drum
+Bring out the coffin, let the mourners come.
 
-The wind was a torrent of darkness among the gusty trees,
-The moon was a ghostly galleon tossed upon cloudy seas,
-The road was a ribbon of moonlight over the purple moor,
-And the highwayman came riding—
-         Riding—riding—
-The highwayman came riding, up to the old inn-door.`,
-      question: "Analyze how the poet uses imagery and sound devices to create atmosphere in this extract. In your response:\n1. Identify and explain THREE images\n2. Discuss the effectiveness of sound devices\n3. Explain how these elements contribute to the mood",
+Let aeroplanes circle moaning overhead
+Scribbling on the sky the message 'He is Dead'.
+Put crepe bows round the white necks of the public doves,
+Let the traffic policemen wear black cotton gloves.
+
+He was my North, my South, my East and West,
+My working week and my Sunday rest,
+My noon, my midnight, my talk, my song;
+I thought that love would last forever: I was wrong.
+
+The stars are not wanted now; put out every one,
+Pack up the moon and dismantle the sun,
+Pour away the ocean and sweep up the wood;
+For nothing now can ever come to any good.`,
+      question: "Discuss how the poet uses imagery and structure to convey the depth of grief in this poem. In your response, consider:\n1. The progression of imagery from public to personal loss\n2. The use of imperatives and their effect\n3. The significance of cosmic imagery in the final stanza\n4. How form and structure reinforce meaning",
       markingCriteria: [
-        "Identification and analysis of metaphors/similes",
-        "Discussion of sound devices (alliteration, rhythm)",
-        "Analysis of atmosphere/mood creation",
-        "Use of relevant quotations",
-        "Coherent essay structure"
+        "Detailed analysis of poetic devices",
+        "Understanding of structure",
+        "Reference to specific examples",
+        "Coherent argument",
+        "Language use and structure"
       ],
-      marks: 30,
-      explanation: "A good response will analyze both literary devices and their combined effect on the poem's atmosphere."
+      marks: 20,
+      explanation: "A strong response will analyze both technical aspects and emotional impact, showing how form and content work together."
     },
-
-    // Section B: Drama (25 marks)
+    
+    // Section B: Novel (40 marks)
     {
       id: 2,
       type: "essay",
-      context: `From "Macbeth" Act 1, Scene 7:
+      context: `"Pride and Prejudice" by Jane Austen
 
-MACBETH:
-If it were done when 'tis done, then 'twere well
-It were done quickly: if the assassination
-Could trammel up the consequence, and catch
-With his surcease success; that but this blow
-Might be the be-all and the end-all here,
-But here, upon this bank and shoal of time,
-We'ld jump the life to come.`,
-      question: "Discuss how this soliloquy reveals Macbeth's state of mind before Duncan's murder. Consider:\n1. His moral conflict\n2. Use of metaphorical language\n3. Dramatic significance",
-      markingCriteria: [
-        "Analysis of character development",
-        "Discussion of moral conflict",
-        "Understanding of dramatic techniques",
-        "Relevant contextual knowledge",
-        "Coherent argument"
-      ],
-      marks: 25,
-      explanation: "Response should demonstrate understanding of both character psychology and dramatic techniques."
-    },
+Consider this extract:
 
-    // Section C: Novel (25 marks)
-    {
-      id: 3,
-      type: "essay",
-      context: `Consider this extract from "Pride and Prejudice":
+"In vain have I struggled. It will not do. My feelings will not be repressed. You must allow me to tell you how ardently I admire and love you."
 
-"In vain I have struggled. It will not do. My feelings will not be repressed. You must allow me to tell you how ardently I admire and love you."
-
-Elizabeth's astonishment was beyond expression. She stared, coloured, doubted, and was silent.`,
+Elizabeth's astonishment was beyond expression. She stared, coloured, doubted, and was silent. This he considered sufficient encouragement; and the avowal of all that he felt, and had long felt for her, immediately followed. He spoke well; but there were feelings besides those of the heart to be detailed; and he was not more eloquent on the subject of tenderness than of pride. His sense of her inferiority—of its being a degradation—of the family obstacles which had always opposed to inclination, were dwelt on with a warmth which seemed due to the consequence he was wounding, but was very unlikely to recommend his suit.`,
       question: "Analyze how Austen uses this scene to explore themes of pride and social expectations. Consider:\n1. Character presentation\n2. Narrative technique\n3. Social context",
       markingCriteria: [
         "Analysis of characterization",
@@ -283,8 +270,8 @@ Elizabeth's astonishment was beyond expression. She stared, coloured, doubted, a
         "Relevant textual references",
         "Coherent argument structure"
       ],
-      marks: 25,
-      explanation: "Answer should demonstrate understanding of both literary techniques and historical context."
+      marks: 20,
+      explanation: "Response should demonstrate understanding of both literary techniques and historical context."
     }
   ]
 };

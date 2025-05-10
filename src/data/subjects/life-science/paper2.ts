@@ -258,16 +258,161 @@ Result: Different amino acid coded`,
   ]
 };
 
+export const lifeSciencePaper2Quiz4: Quiz = {
+  id: "life-science-paper2-quiz4",
+  title: "Life Science Paper 2 - Quiz 4: Common Misconceptions",
+  description: "Review and correct common misconceptions in genetics and evolution",
+  timeLimit: 300,
+  questions: [
+    {
+      id: 1,
+      context: `Common Misconception:
+"Evolution means that organisms are trying to adapt
+and can change their genes when needed."
+
+Correct Understanding:
+1. Evolution is NOT directed or intentional
+2. Random mutations occur regardless of need
+3. Natural selection acts on existing variations
+4. Beneficial mutations are preserved
+5. Changes occur in populations, not individuals
+6. Process takes many generations`,
+      question: "Why can't individual organisms evolve during their lifetime?",
+      options: [
+        "They don't try hard enough",
+        "Changes to body cells don't affect gametes",
+        "The environment isn't changing fast enough",
+        "They need more time"
+      ],
+      correctAnswer: 1,
+      explanation: "Only mutations in gametes can be passed on. Changes to body cells (somatic cells) during an organism's lifetime don't affect inheritance."
+    },
+    {
+      id: 2,
+      context: `Common Misconception:
+"If a trait is dominant, it must be more common
+in the population than the recessive trait."
+
+Correct Understanding:
+1. Dominance ≠ frequency in population
+2. Example: Polydactyly (extra fingers)
+   • Dominant trait
+   • Very rare in population
+3. Example: Blue eyes
+   • Recessive trait
+   • Common in some populations
+4. Population frequency depends on:
+   • Selection pressures
+   • Genetic drift
+   • Founder effects
+   • Migration patterns`,
+      question: "Why isn't a dominant allele necessarily more common in a population?",
+      options: [
+        "Because dominant alleles are stronger",
+        "Because dominance only affects phenotype expression",
+        "Because recessive alleles are stronger",
+        "Because dominance changes over time"
+      ],
+      correctAnswer: 1,
+      explanation: "Dominance only determines how alleles interact and are expressed (phenotype). Population frequency is determined by evolutionary factors."
+    }
+  ]
+};
+
+export const lifeSciencePaper2Quiz5: Quiz = {
+  id: "life-science-paper2-quiz5",
+  title: "Life Science Paper 2 - Quiz 5: Exam Technique",
+  description: "Learn effective strategies for tackling biology exams",
+  timeLimit: 300,
+  questions: [
+    {
+      id: 1,
+      context: `Analyzing Scientific Data:
+
+Given: Graph showing predator-prey populations
+over time with overlapping cycles.
+
+Effective Analysis Strategy:
+1. Start with graph features (2 min):
+   • Title and axis labels
+   • Units and scale
+   • Overall patterns
+   • Key points/changes
+
+2. Link to theory (3 min):
+   • Predator-prey relationships
+   • Population dynamics
+   • Carrying capacity
+   • Limiting factors
+
+3. Writing response (5 min):
+   • Describe patterns
+   • Support with data
+   • Explain relationships
+   • Draw conclusions`,
+      question: "When analyzing biological data, why should you describe patterns before explaining them?",
+      options: [
+        "Because it's easier",
+        "To ensure observations support explanations",
+        "To use more words",
+        "To fill time"
+      ],
+      correctAnswer: 1,
+      explanation: "Describing patterns first ensures your explanations are grounded in evidence from the data, following scientific method principles."
+    },
+    {
+      id: 2,
+      context: `Essay Writing in Biology:
+
+Question: "Discuss how energy flows through
+an ecosystem."
+
+Poor approach:
+• Starting with random facts
+• No clear structure
+• Missing examples
+• Vague statements
+
+Better approach:
+1. Plan (3 min):
+   • Define key terms
+   • List main points
+   • Organize flow
+   • Include examples
+
+2. Writing (12 min):
+   • Clear introduction
+   • Logical progression
+   • Specific examples
+   • Diagrams if helpful
+
+3. Check (2 min):
+   • Biological terms
+   • Supporting evidence
+   • Clear conclusion`,
+      question: "Why is planning essential for biology essays?",
+      options: [
+        "To use up time",
+        "To organize ideas and ensure comprehensive coverage",
+        "To practice writing",
+        "To look busy"
+      ],
+      correctAnswer: 1,
+      explanation: "Planning helps organize complex biological concepts logically, ensures key points are covered, and helps maintain focus on the question."
+    }
+  ]
+};
+
 export const lifeSciencePaper2: Quiz = {
   id: "life-science-paper2",
   title: "Life Sciences - Paper 2: Environmental Studies & Genetics",
-  description: "Tests knowledge of evolution, environmental studies, and genetics. Includes data response and analysis. Total marks: 150",
+  description: "Tests knowledge of evolution, environmental studies, and genetics. Total marks: 150",
   timeLimit: 10800, // 3 hours
   questions: [
-    // Section A: Short Questions (50 marks)
+    // Section A: Environmental Studies (50 marks)
     {
       id: 1,
-      context: `Study the diagram of a food web:
+      context: `Study the food web diagram:
 
 [Diagram shows:
 • Primary producers: Grass, Trees, Algae
@@ -275,53 +420,61 @@ export const lifeSciencePaper2: Quiz = {
 • Secondary consumers: Lion, Eagle, Large fish
 • Decomposers: Bacteria, Fungi
 
-Energy flow indicated by arrows]`,
-      question: "Explain why this food web would collapse if all decomposers were removed.",
+Energy flow and nutrient cycling indicated by arrows]
+
+Energy pyramid data:
+Level 4 (Top predators): 0.1% of original energy
+Level 3 (Secondary consumers): 1%
+Level 2 (Primary consumers): 10%
+Level 1 (Producers): 100%`,
+      question: "Analyze this ecosystem:\n1. Explain energy flow\n2. Discuss nutrient cycling\n3. Predict impact if decomposers are removed\n4. Suggest conservation measures",
       type: "essay",
-      marks: 8,
       markingCriteria: [
-        "Understanding of nutrient cycling",
-        "Role of decomposers",
-        "Impact on ecosystem",
-        "Logical explanation"
+        "Understanding of energy transfer",
+        "Nutrient cycle explanation",
+        "Ecological relationships",
+        "Conservation awareness"
       ],
-      explanation: "Answer should demonstrate understanding of nutrient cycles and ecosystem interdependence"
+      marks: 20,
+      explanation: "Answer should demonstrate understanding of ecosystem dynamics and interdependence."
     },
 
-    // Section B: Evolution & Population Dynamics (50 marks)
+    // Section B: Population Studies (30 marks)
     {
       id: 10,
-      context: `Study this population growth data:
+      context: `Population Growth Study:
 
-Year  Population Size  Birth Rate  Death Rate  Migration
-1990  1000            45          15          +5
-1995  1200            42          14          +8
-2000  1500            40          12          +10
-2005  1900            38          11          +15
-2020  2500            35          10          +20
+Data for zebra population in reserve:
+Year | Population | Rainfall(mm) | Predators
+2020 | 120       | 650         | 15
+2021 | 145       | 700         | 12
+2022 | 180       | 750         | 10
+2023 | 230       | 720         | 8
+2024 | 300       | 680         | 6
 
 Required:
-1. Calculate growth rate for each period
+1. Calculate growth rate
 2. Identify limiting factors
-3. Predict future trends`,
-      question: "Analyze the population dynamics shown in the data. Include:\n1. Growth rate calculations\n2. Factors affecting growth\n3. Environmental implications\n4. Future predictions",
+3. Predict carrying capacity
+4. Suggest management strategies`,
+      question: "Analyze the population dynamics and suggest management strategies.",
       type: "essay",
-      marks: 15,
       markingCriteria: [
-        "Accurate calculations",
-        "Factor analysis",
-        "Environmental impact",
-        "Valid predictions"
+        "Data analysis",
+        "Factor identification",
+        "Prediction accuracy",
+        "Management suggestions"
       ],
-      explanation: "Response should show understanding of population dynamics and environmental carrying capacity"
+      marks: 15,
+      explanation: "Response should show understanding of population ecology and wildlife management."
     },
 
-    // Section C: Genetics & Inheritance (50 marks)
+    // Section C: Genetics (70 marks)
     {
       id: 20,
-      context: `Genetic Study:
+      context: `Genetic Disorder Case Study:
 
-Pedigree analysis of color blindness:
+Family pedigree for color blindness:
 [Diagram shows three generations]
 □ = Unaffected male
 ■ = Affected male
@@ -334,36 +487,44 @@ Pattern indicates X-linked inheritance:
 • Condition passes from carrier mother to son`,
       question: "Analyze this inheritance pattern:\n1. Determine type of inheritance\n2. Calculate probability of inheritance\n3. Draw genetic diagrams\n4. Explain gender differences",
       type: "essay",
-      marks: 15,
       markingCriteria: [
-        "Correct inheritance pattern",
-        "Accurate probability",
-        "Clear genetic diagrams",
-        "Valid explanation"
+        "Inheritance pattern analysis",
+        "Probability calculations",
+        "Genetic diagram accuracy",
+        "Sex-linkage explanation"
       ],
-      explanation: "Answer should demonstrate understanding of sex-linked inheritance patterns"
+      marks: 20,
+      explanation: "Answer should demonstrate understanding of sex-linked inheritance patterns."
     },
 
-    // Environmental Impact Analysis
+    // Section D: Molecular Genetics (30 marks)
     {
       id: 30,
-      context: `Study these climate change indicators:
+      context: `DNA Analysis:
 
-1990: pH 8.1, CO₂ 355ppm
-2025: pH 8.0, CO₂ 410ppm
+Original DNA: GAT CCG TAA
+Mutated DNA:  GAT CTG TAA
 
-Chemical reaction:
-CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻`,
-      question: "Analyze the environmental impact:\n1. Explain ocean acidification\n2. Impact on marine ecosystems\n3. Suggest mitigation strategies",
+Types of mutations:
+1. Substitution (base change)
+2. Insertion (base added)
+3. Deletion (base removed)
+4. Frameshift (reading frame altered)
+
+Protein synthesis steps:
+1. Transcription
+2. Translation
+3. Protein folding`,
+      question: "Analyze the mutation's effect:\n1. Identify mutation type\n2. Predict effect on protein\n3. Discuss potential phenotype\n4. Suggest treatment approaches",
       type: "essay",
-      marks: 12,
       markingCriteria: [
-        "Process explanation",
-        "Impact analysis",
-        "Valid solutions",
-        "Scientific accuracy"
+        "Mutation identification",
+        "Protein analysis",
+        "Phenotype prediction",
+        "Treatment discussion"
       ],
-      explanation: "Answer should show understanding of environmental chemistry and ecosystem impacts"
+      marks: 15,
+      explanation: "Response should show understanding of molecular genetics and protein synthesis."
     }
   ]
 };
