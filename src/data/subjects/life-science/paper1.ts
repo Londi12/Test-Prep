@@ -17,6 +17,13 @@ export const lifeSciencePaper1Quiz1: Quiz = {
 - ATP synthase enzymes]
 
 This organelle is responsible for cellular respiration.
+
+Think about:
+1. Why does this organelle have a double membrane?
+2. What's the purpose of the folded inner membrane?
+3. Where in the cell would you find many of these?
+4. Which cellular processes require lots of energy?
+
 Process:
 1. Glucose + O₂ → CO₂ + H₂O + Energy (ATP)
 2. Occurs in stages:
@@ -38,6 +45,12 @@ Process:
 - Dense nucleolus
 - Nuclear membrane with pores
 - Chromatin material]
+
+Think about:
+1. Why does this structure have pores in its membrane?
+2. What needs to move in and out?
+3. Why is chromatin material important?
+4. When would you see this material condense?
 
 Key functions:
 1. Contains genetic material (DNA)
@@ -64,10 +77,21 @@ Setup:
 • Initial mass recorded
 • Final mass measured after 30 minutes
 
+Consider:
+1. What is the concentration inside potato cells?
+2. Compare this to each solution
+3. Which way will water move?
+4. What happens to cell volume?
+
 Results:
 Distilled water: mass increased
 0.9% NaCl: mass unchanged
-10% NaCl: mass decreased`,
+10% NaCl: mass decreased
+
+Analysis tips:
+- Higher concentration → water moves toward it
+- Equal concentration → no net movement
+- Mass change indicates water movement`,
       question: "What happened to the potato in distilled water?",
       options: [
         "Water moved out of the cells",
@@ -89,6 +113,13 @@ export const lifeSciencePaper1Quiz2: Quiz = {
   questions: [
     {
       id: 1,
+      context: `Think about the skeletal system's main roles:
+1. Provides framework for body
+2. Protects vital organs
+3. Allows movement with muscles
+4. Houses bone marrow
+
+Consider which function doesn't fit with these roles.`,
       question: "Which of these is NOT a function of the skeletal system?",
       options: ["Support", "Protection", "Movement", "Digestion"],
       correctAnswer: 3,
@@ -286,6 +317,17 @@ export const lifeSciencePaper1: Quiz = {
 - ATP synthase enzymes
 - Scale bar showing size: 1μm]
 
+Approach this question by:
+1. Identifying key structural features
+   - Look at membrane arrangement
+   - Note special internal features
+2. Connecting structure to function
+   - Why are membranes folded?
+   - What happens at ATP synthase?
+3. Consider cellular energy needs
+   - Which processes need ATP?
+   - Where are these organelles numerous?
+
 The organelle is involved in cellular respiration:
 • Glucose + O₂ → CO₂ + H₂O + Energy (ATP)
 • Process occurs in inner membrane folds
@@ -319,6 +361,23 @@ Method:
 2. Place each cylinder in different solutions
 3. Leave for 30 minutes
 4. Remove, blot dry, and record final mass
+
+Essay writing guide:
+1. Hypothesis
+   - What relationship do you expect?
+   - Why do you expect this?
+2. Variables
+   - Independent: What you change
+   - Dependent: What you measure
+   - Control: What you keep the same
+3. Results analysis
+   - Look for patterns
+   - Calculate percentage changes
+   - Link to concentration differences
+4. Scientific explanation
+   - Use osmosis terminology
+   - Explain direction of water movement
+   - Connect to concentration gradients
 
 Results:
 Solution          Initial Mass   Final Mass   Change

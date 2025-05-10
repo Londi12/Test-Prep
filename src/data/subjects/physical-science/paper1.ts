@@ -8,37 +8,33 @@ export const physicalSciencePaper1Quiz1: Quiz = {
   questions: [
     {
       id: 1,
-      context: `A 2 kg object accelerates at 4 m/s² when a force is applied.
+      context: `A 2kg object is pushed across a rough surface with a constant force of 10N at an angle of 30° to the horizontal.
 
-Solution steps:
-1. Use Newton's Second Law: F = ma
-2. Substitute known values:
-   m = 2 kg
-   a = 4 m/s²
-3. Calculate:
-   F = 2 kg × 4 m/s²
-   F = 8 N`,
-      question: "Calculate the net force acting on the object.",
-      options: ["4 N", "6 N", "8 N", "10 N"],
-      correctAnswer: 2,
-      explanation: "Using Newton's Second Law (F = ma):\n1. Mass (m) = 2 kg\n2. Acceleration (a) = 4 m/s²\n3. Therefore, Force = 2 × 4 = 8 N\nThe force must be 8 N to produce this acceleration."
-    },
-    {
-      id: 2,
-      context: `A wave has the following properties:
-• Wavelength (λ) = 2 meters
-• Velocity (v) = 4 m/s
+Problem Solving Steps:
+1. Draw a Force Diagram
+   • Weight (mg) downward
+   • Normal force (N) upward
+   • Applied force (F) at 30°
+   • Friction (f) opposing motion
 
-To find frequency:
-1. Use wave equation: v = fλ
-2. Rearrange to solve for f: f = v/λ
-3. Substitute values:
-   f = 4 m/s ÷ 2 m
-   f = 2 Hz`,
-      question: "Calculate the frequency of the wave.",
-      options: ["0.5 Hz", "2 Hz", "4 Hz", "8 Hz"],
+2. Break down applied force:
+   • Horizontal: F cos θ = 10 × cos 30°
+   • Vertical: F sin θ = 10 × sin 30°
+
+3. Consider:
+   • How does vertical component affect normal force?
+   • How does this affect friction?
+   • What's the net horizontal force?
+
+Key Concepts:
+• F = ma
+• μ = f/N
+• Normal force = weight - F sin θ
+• Friction = μN`,
+      question: "Calculate the horizontal component of the 10N force.",
+      options: ["5N", "8.66N", "10N", "15N"],
       correctAnswer: 1,
-      explanation: "Using the wave equation (v = fλ):\n1. Rearrange to f = v/λ\n2. Substitute v = 4 m/s and λ = 2 m\n3. f = 4/2 = 2 Hz\nThe frequency must be 2 Hz to satisfy the wave equation."
+      explanation: "F_x = F cos θ = 10N × cos 30° = 10 × 0.866 = 8.66N\nThe horizontal component is found using the cosine of the angle."
     }
   ]
 };
@@ -51,11 +47,37 @@ export const physicalSciencePaper1Quiz2: Quiz = {
   questions: [
     {
       id: 1,
-      question: "What is the frequency of a wave with a wavelength of 2 meters traveling at 4 m/s?",
-      context: "Wave with λ = 2m, v = 4 m/s",
-      options: ["0.5 Hz", "2 Hz", "4 Hz", "8 Hz"],
+      context: `Electric Circuit Problem:
+      
+[Circuit Diagram shows:
+- 12V battery
+- Three resistors in series: R₁=2Ω, R₂=4Ω, R₃=6Ω]
+
+Analysis Strategy:
+1. Identify Circuit Type
+   • Series or Parallel?
+   • What's shared in series circuits?
+   • What's shared in parallel circuits?
+
+2. Apply Circuit Rules
+   Series Circuits:
+   • V_total = V₁ + V₂ + V₃
+   • I_total = I₁ = I₂ = I₃
+   • R_total = R₁ + R₂ + R₃
+
+3. Calculate Step by Step:
+   a) Find total resistance
+   b) Calculate current using V=IR
+   c) Find voltage across each resistor
+
+4. Check Your Answer:
+   • Does current match in all parts?
+   • Do voltages sum to battery voltage?
+   • Are units consistent?`,
+      question: "What is the total resistance in this circuit?",
+      options: ["2Ω", "12Ω", "0.5Ω", "4Ω"],
       correctAnswer: 1,
-      explanation: "Using the wave equation v = fλ, where v is velocity (4 m/s) and λ is wavelength (2 m): 4 = f × 2, so f = 2 Hz"
+      explanation: "In a series circuit, total resistance is the sum of individual resistances:\nR_total = 2Ω + 4Ω + 6Ω = 12Ω"
     },
     {
       id: 2,
@@ -168,6 +190,70 @@ export const physicalSciencePaper1: Quiz = {
   description: "Test your knowledge on mechanics, waves, electricity and magnetism. This paper includes both multiple choice and structured questions to match the exam format.",
   timeLimit: 10800, // 3 hours
   questions: [
+    // Section A: Mechanics (50 marks)
+    {
+      id: 1,
+      context: `Free-fall Motion Investigation
+
+Apparatus:
+• Metal ball
+• Electronic timer
+• Meter stick
+• Motion sensor
+
+Method:
+1. Release ball from different heights
+2. Measure time to reach ground
+3. Calculate acceleration
+
+Problem Analysis:
+1. What affects the motion?
+   • Gravity (constant 9.8 m/s²)
+   • Air resistance (negligible for short drops)
+   • Initial velocity (zero)
+
+2. Relevant Equations:
+   • s = ut + ½at²
+   • v = u + at
+   • v² = u² + 2as
+   Where:
+   s = displacement
+   u = initial velocity
+   v = final velocity
+   a = acceleration
+   t = time
+
+3. Data Analysis:
+Height (m) | Time (s)
+1.0        | 0.45
+2.0        | 0.64
+3.0        | 0.78
+4.0        | 0.90
+
+4. Expected Pattern:
+   • Time not directly proportional to height
+   • s ∝ t²
+   • Plot should be parabolic`,
+      question: "Using s = ½gt², calculate the theoretical time for a 2.0m drop.",
+      type: 'math',
+      correctAnswer: "0.639 \\text{ s}",
+      acceptableAnswers: ["0.64 \\text{ s}", "0.64"],
+      solutionSteps: [
+        {
+          explanation: "Rearrange s = ½gt² to solve for t",
+          math: "t = \\sqrt{\\frac{2s}{g}}"
+        },
+        {
+          explanation: "Substitute s = 2.0m and g = 9.8m/s²",
+          math: "t = \\sqrt{\\frac{2(2.0)}{9.8}}"
+        },
+        {
+          explanation: "Calculate final answer",
+          math: "t = 0.639 \\text{ s}"
+        }
+      ],
+      marks: 4
+    },
     // Section A: Multiple Choice
     ...physicalSciencePaper1Quiz1.questions,
     // Section B: Mechanics and Waves

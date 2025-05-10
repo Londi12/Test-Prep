@@ -217,15 +217,63 @@ export const englishPaper3: Quiz = {
     {
       id: 1,
       type: "essay",
-      context: `Choose ONE of the following topics and write an essay of 400-450 words:
+      context: `Essay Writing Framework:
 
-1. "The choices we make today shape the world of tomorrow." Write a reflective essay exploring this idea.
+Topic: "Social media: connecting or disconnecting us?"
 
-2. The photograph shows a single tree growing through concrete in an urban setting. Write a descriptive essay inspired by this image.
+Planning Stage (10 min):
+1. Brainstorm (3 min)
+   Pros:
+   • Global connectivity
+   • Information sharing
+   • Support networks
+   • Business opportunities
+   
+   Cons:
+   • Surface relationships
+   • Reduced face-to-face
+   • Mental health issues
+   • Privacy concerns
 
-3. "Social media: connecting or disconnecting us?" Write an argumentative essay expressing your viewpoint.
+2. Structure (2 min):
+   Intro:
+   • Hook: Striking statistic
+   • Context: Digital age
+   • Thesis: Double-edged sword
+   
+   Body:
+   • Para 1: Connectivity benefits
+   • Para 2: Hidden costs
+   • Para 3: Finding balance
+   
+   Conclusion:
+   • Restate main points
+   • Future outlook
+   • Call to action
 
-4. Write a narrative essay beginning with: "The key turned in the lock with a sound that echoed through the empty house..."`,
+3. Evidence Types (2 min):
+   • Statistics
+   • Examples
+   • Expert opinions
+   • Personal observations
+
+4. Language Focus (3 min):
+   • Academic vocabulary
+   • Varied sentence structure
+   • Appropriate transitions
+   • Formal register
+
+Writing Stage (30 min):
+• Follow plan structure
+• Support each point
+• Link paragraphs
+• Maintain focus
+
+Checking Stage (5 min):
+• Arguments logical
+• Evidence supports
+• Grammar/spelling
+• Word count`,
       question: "Write your essay following these criteria:\n1. Clear structure (introduction, body, conclusion)\n2. Appropriate style and tone\n3. Language accuracy\n4. Development of ideas\n5. Original thought",
       markingCriteria: [
         "Content & planning (30)",
@@ -240,13 +288,36 @@ export const englishPaper3: Quiz = {
     {
       id: 2,
       type: "essay",
-      context: `Choose ONE of the following and write a piece of 250-300 words:
+      context: `Short Story Framework:
 
-1. Write a short story ending with: "...and that's when everything changed."
+Story ending with: "...and that's when everything changed."
 
-2. Write a descriptive piece titled "The Sound of Silence"
+Planning (8 min):
+1. Story Elements:
+   • Character: Clear protagonist
+   • Setting: Vivid details
+   • Conflict: Internal/external
+   • Plot: Build tension
+   • Theme: Change/transformation
 
-3. Write a diary entry reflecting on a moment that changed your perspective on life.`,
+2. Structure:
+   • Opening: Hook reader
+   • Rising action: Build tension
+   • Climax: Key moment
+   • Resolution: Change revealed
+
+3. Literary Devices:
+   • Sensory details
+   • Dialogue
+   • Imagery
+   • Symbolism
+
+Writing Tips:
+• Show, don't tell
+• Use specific details
+• Vary sentence length
+• Create atmosphere
+• Strong ending`,
       question: "Write your piece considering:\n1. Appropriate format and style\n2. Creative use of language\n3. Engaging content\n4. Clear structure",
       markingCriteria: [
         "Content & creativity (15)",

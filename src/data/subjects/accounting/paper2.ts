@@ -10,18 +10,34 @@ export const accountingPaper2Quiz1: Quiz = {
       id: 1,
       context: `Manufacturing Cost Analysis:
 
-Johnson Manufacturing Company
-Monthly Production Data:
-• Units produced: 1,000
-• Direct materials: R50 per unit
-• Direct labor: R30 per unit
-• Factory rent: R20,000 fixed
-• Utilities: R10,000 + R5 per unit
-• Supervisor salary: R15,000 fixed
+Step-by-Step Solution Guide:
+1. Identify Cost Types:
+   Fixed Costs:
+   • Factory rent: R20,000
+   • Supervisor salary: R15,000
+   Total Fixed = R35,000
 
-Calculate total cost at:
-1. Current level (1,000 units)
-2. If production increases to 1,200 units`,
+   Variable Costs (per unit):
+   • Direct materials: R50
+   • Direct labor: R30
+   • Variable utilities: R5
+   Total Variable = R85/unit
+
+2. Calculate Total Cost:
+   Current Level (1,000 units):
+   • Variable costs: 1,000 × R85 = R85,000
+   • Fixed costs: R35,000
+   • Total: R120,000
+
+3. New Level (1,200 units):
+   • Variable costs: 1,200 × R85 = R102,000
+   • Fixed costs: R35,000 (unchanged)
+   • Total: R137,000
+
+Key Learning Points:
+• Fixed costs remain constant
+• Variable costs change with production
+• Total cost = Fixed + (Units × Variable cost)`,
       question: "What is the total variable cost per unit?",
       options: ["R80", "R85", "R90", "R95"],
       correctAnswer: 1,
@@ -38,6 +54,34 @@ export const accountingPaper2Quiz2: Quiz = {
   questions: [
     {
       id: 1,
+      context: `Break-even Analysis:
+
+Given:
+• Selling price: R150 per unit
+• Variable cost: R90 per unit
+• Fixed costs: R240,000
+
+Solution Framework:
+1. Find Contribution Margin:
+   • CM = Price - Variable cost
+   • CM = R150 - R90 = R60 per unit
+
+2. Calculate Break-even Point:
+   • BEP units = Fixed costs ÷ CM per unit
+   • BEP = R240,000 ÷ R60
+   • BEP = 4,000 units
+
+3. Verify with Income Statement:
+   Sales (4,000 × R150)     R600,000
+   Less: Variable costs     (R360,000)
+   Contribution margin      R240,000
+   Less: Fixed costs       (R240,000)
+   Net profit/loss         R0 ✓
+
+Common Mistakes to Avoid:
+• Don't mix up fixed and variable costs
+• Include ALL fixed costs
+• Check your units`,
       question: "What is the break-even point?",
       options: [
         "Where total revenue equals total variable costs",
@@ -191,15 +235,48 @@ export const accountingPaper2: Quiz = {
     // Section A: Concepts and Terminology (30 marks)
     {
       id: 1,
-      context: `Study these cost classifications:
+      context: `Cost Classification Exercise:
 
-Manufacturing costs for a furniture company:
-• Wood and materials: R150,000
-• Factory workers' wages: R80,000
+Manufacturing Company Cost Data:
+• Raw materials used: R150,000
+• Factory labor: R80,000
 • Factory rent: R30,000
 • Factory insurance: R15,000
-• Sales staff salaries: R45,000
-• Delivery expenses: R25,000`,
+• Sales salaries: R45,000
+• Delivery expenses: R25,000
+
+Analysis Framework:
+1. Identify Manufacturing Costs:
+   Direct:
+   • Raw materials
+   • Factory labor
+   
+   Indirect (Overhead):
+   • Factory rent
+   • Factory insurance
+
+2. Separate Non-manufacturing:
+   Period Costs:
+   • Sales salaries
+   • Delivery expenses
+
+3. Calculate Totals:
+   Prime Cost:
+   • Materials + Direct labor
+   • R150,000 + R80,000 = R230,000
+
+   Factory Overhead:
+   • Rent + Insurance
+   • R30,000 + R15,000 = R45,000
+
+   Total Manufacturing:
+   • Prime + Overhead
+   • R230,000 + R45,000 = R275,000
+
+Tips:
+• Check if cost is part of product
+• Consider timing of cost
+• Think about cost behavior`,
       question: "Classify these costs as product or period costs, and calculate total manufacturing costs.",
       type: "short-answer",
       correctAnswer: "Product costs (manufacturing):\n- Materials: R150,000\n- Direct labor: R80,000\n- Factory overhead: R45,000\nTotal manufacturing cost: R275,000\n\nPeriod costs:\n- Sales salaries: R45,000\n- Delivery: R25,000",

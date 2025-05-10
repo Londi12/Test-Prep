@@ -8,15 +8,35 @@ export const physicalSciencePaper2Quiz1: Quiz = {
   questions: [
     {
       id: 1,
-      context: `Consider an atom of Sodium (Na):
-      • Atomic number = 11
-      • Mass number = 23
-      • Electron configuration: 1s² 2s² 2p⁶ 3s¹
-      
-This means:
-• Number of protons = 11
-• Number of neutrons = 23 - 11 = 12
-• Number of electrons = 11`,
+      context: `Atomic Structure Problem:
+
+Element X has:
+• Atomic number: 11
+• Mass number: 23
+• Electron configuration: [Ne]3s¹
+
+Problem-Solving Framework:
+1. Find Basic Numbers:
+   • Protons = Atomic number = 11
+   • Electrons = Atomic number = 11
+   • Neutrons = Mass - Atomic number
+   = 23 - 11 = 12
+
+2. Electronic Structure:
+   • Core = [Ne] = 1s²2s²2p⁶
+   • Valence = 3s¹
+   • Total electrons = 10 + 1 = 11
+
+3. Chemical Properties:
+   • Group 1 (alkali metal)
+   • One valence electron
+   • Highly reactive
+   • Forms +1 ions
+
+4. Check Work:
+   • Numbers balance
+   • Configuration follows rules
+   • Properties match pattern`,
       question: "What is the atomic number of an element?",
       options: [
         "The number of neutrons",
@@ -113,8 +133,38 @@ export const physicalSciencePaper2Quiz3: Quiz = {
   questions: [
     {
       id: 1,
+      context: `Chemical Equilibrium Analysis:
+
+Reaction: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + heat
+
+Given conditions:
+• Temperature = 450°C
+• Pressure = 200 atm
+• [N₂] = 0.5 M
+• [H₂] = 1.5 M
+• [NH₃] = 0.8 M
+
+Analysis Steps:
+1. Write Kc Expression:
+   Kc = [NH₃]²/([N₂][H₂]³)
+
+2. Calculate Kc:
+   = (0.8)²/(0.5 × (1.5)³)
+   = 0.64/1.6875
+   = 0.379
+
+3. Predict Shifts:
+   • Temperature ↑: Shifts left (exothermic)
+   • Pressure ↑: Shifts right (fewer moles)
+   • [Reactant] ↑: Shifts right
+   • [Product] ↑: Shifts left
+
+4. Industrial Conditions:
+   • Low temp (yield) vs rate
+   • High pressure (yield)
+   • Remove product (yield)
+   • Iron catalyst (rate)`,
       question: "What is the pH of a neutral solution at 25°C?",
-      context: "Solution temperature: 25°C",
       options: ["0", "7", "10", "14"],
       correctAnswer: 1,
       explanation: "At 25°C, a neutral solution has a pH of 7, with equal concentrations of H+ and OH- ions"
@@ -303,18 +353,39 @@ export const physicalSciencePaper2: Quiz = {
     // Section A: Multiple Choice & Terminology (30 marks)
     {
       id: 1,
-      context: `Study the periodic table and atomic structure:
+      context: `Titration Analysis:
 
-Element X:
-• Atomic number: 11
-• Mass number: 23
-• Electron configuration: [Ne]3s¹
+Given:
+• 25.0 mL of H₂SO₄ solution
+• Titrated with 0.100 M NaOH
+• NaOH used = 40.0 mL
+• Indicator: phenolphthalein
+• Temperature: 25°C
 
-Calculate:
-1. Number of protons = 11
-2. Number of neutrons = 23 - 11 = 12
-3. Number of electrons = 11
-4. Valence electrons = 1`,
+Balanced equation:
+H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O
+
+Solution Strategy:
+1. Find moles NaOH:
+   n = CV
+   = 0.100 × 0.0400
+   = 0.00400 mol
+
+2. Use equation ratio:
+   H₂SO₄:NaOH = 1:2
+   nH₂SO₄ = nNaOH ÷ 2
+   = 0.00400 ÷ 2
+   = 0.00200 mol
+
+3. Calculate concentration:
+   C = n/V
+   = 0.00200/0.0250
+   = 0.0800 M H₂SO₄
+
+4. Verify:
+   • Check equation balancing
+   • Check unit conversions
+   • Check ratio logic`,
       question: "Which element is X and what is its likely chemical behavior?",
       options: [
         "Neon - inert",

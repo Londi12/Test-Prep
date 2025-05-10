@@ -327,78 +327,83 @@ export const lifeSciencePaper2Quiz5: Quiz = {
   questions: [
     {
       id: 1,
-      context: `Analyzing Scientific Data:
+      context: `Analyzing Biological Data:
 
-Given: Graph showing predator-prey populations
-over time with overlapping cycles.
+Population Study Data:
+Year | Population | Rainfall(mm)
+2020 | 120       | 650        
+2021 | 145       | 700        
+2022 | 180       | 750        
 
-Effective Analysis Strategy:
-1. Start with graph features (2 min):
-   • Title and axis labels
-   • Units and scale
-   • Overall patterns
-   • Key points/changes
+Analysis Framework:
+1. Describe Patterns (3-4 min)
+   • Population trend: Increasing
+   • Rainfall trend: Increasing
+   • Relationship: Positive correlation
 
-2. Link to theory (3 min):
-   • Predator-prey relationships
-   • Population dynamics
-   • Carrying capacity
-   • Limiting factors
+2. Calculate Changes (3-4 min)
+   • Population increase:
+     2020-2021: +25 (20.8%)
+     2021-2022: +35 (24.1%)
+   • Rainfall increase:
+     2020-2021: +50mm
+     2021-2022: +50mm
 
-3. Writing response (5 min):
-   • Describe patterns
-   • Support with data
-   • Explain relationships
-   • Draw conclusions`,
-      question: "When analyzing biological data, why should you describe patterns before explaining them?",
-      options: [
-        "Because it's easier",
-        "To ensure observations support explanations",
-        "To use more words",
-        "To fill time"
-      ],
-      correctAnswer: 1,
-      explanation: "Describing patterns first ensures your explanations are grounded in evidence from the data, following scientific method principles."
+3. Scientific Explanation (5-6 min)
+   • More rainfall → more vegetation
+   • More food availability
+   • Better breeding conditions
+   • Higher survival rates
+
+4. Consider Other Factors (3-4 min)
+   • Predator numbers
+   • Disease outbreaks
+   • Human interference
+   • Competition
+
+Writing Tips:
+• Use data to support claims
+• Show calculations clearly
+• Consider multiple factors
+• Link to ecological principles`,
     },
     {
       id: 2,
-      context: `Essay Writing in Biology:
+      context: `Experimental Design:
 
-Question: "Discuss how energy flows through
-an ecosystem."
+Research Question: 
+"How does light intensity affect the rate of photosynthesis?"
 
-Poor approach:
-• Starting with random facts
-• No clear structure
-• Missing examples
-• Vague statements
+Design Framework:
+1. Variables (2-3 min):
+   Independent: Light intensity
+   Dependent: Rate of photosynthesis
+   Control: Temperature, CO₂, plant type
 
-Better approach:
-1. Plan (3 min):
-   • Define key terms
-   • List main points
-   • Organize flow
-   • Include examples
+2. Method (4-5 min):
+   • Use water plant (Elodea)
+   • Count oxygen bubbles
+   • Different distances from light
+   • Time: 5 minutes per test
+   • 3 repeats per distance
 
-2. Writing (12 min):
-   • Clear introduction
-   • Logical progression
-   • Specific examples
-   • Diagrams if helpful
+3. Data Collection (3-4 min):
+   • Create results table
+   • Record bubble count
+   • Note observations
+   • Calculate averages
 
-3. Check (2 min):
-   • Biological terms
-   • Supporting evidence
-   • Clear conclusion`,
-      question: "Why is planning essential for biology essays?",
-      options: [
-        "To use up time",
-        "To organize ideas and ensure comprehensive coverage",
-        "To practice writing",
-        "To look busy"
-      ],
-      correctAnswer: 1,
-      explanation: "Planning helps organize complex biological concepts logically, ensures key points are covered, and helps maintain focus on the question."
+4. Analysis Plan (3-4 min):
+   • Graph: Line graph
+   • X-axis: Light intensity
+   • Y-axis: Bubble count/min
+   • Include error bars
+
+Safety & Accuracy:
+• Maintain constant temperature
+• Fresh plants for each test
+• Clean equipment
+• Accurate measurements`,
     }
   ]
 };

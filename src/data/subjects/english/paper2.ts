@@ -8,14 +8,39 @@ export const englishPaper2Quiz1: Quiz = {
   questions: [
     {
       id: 1,
-      context: `Read the following extract from "The Highwayman" by Alfred Noyes:
+      context: `Poetry Analysis Framework:
 
+"The Highwayman" (Extract)
 The wind was a torrent of darkness among the gusty trees,
 The moon was a ghostly galleon tossed upon cloudy seas,
-The road was a ribbon of moonlight over the purple moor,
-And the highwayman came riding—
-         Riding—riding—
-The highwayman came riding, up to the old inn-door.`,
+The road was a ribbon of moonlight over the purple moor...
+
+Analysis Steps:
+1. Form & Structure (2 min)
+   • Identify verse form (ballad)
+   • Note rhyme scheme (AABBA)
+   • Observe line length and rhythm
+
+2. Language Devices (3 min)
+   Visual Imagery:
+   • "torrent of darkness" - movement/threat
+   • "ghostly galleon" - supernatural mood
+   • "ribbon of moonlight" - path/guidance
+
+3. Atmosphere (2 min)
+   • Gothic elements: darkness, ghost
+   • Romantic elements: moonlight, mystery
+   • Movement suggestions: torrent, tossed
+
+4. Deeper Meaning (3 min)
+   • Nature reflecting human drama
+   • Light vs dark symbolism
+   • Journey/path metaphors
+
+Remember:
+• Link devices to effects
+• Consider multiple interpretations
+• Support with specific quotes`,
       question: "Which literary device is used in 'The moon was a ghostly galleon tossed upon cloudy seas'?",
       options: ["Metaphor", "Simile", "Alliteration", "Onomatopoeia"],
       correctAnswer: 0,
@@ -218,27 +243,52 @@ export const englishPaper2: Quiz = {
     {
       id: 1,
       type: "essay",
-      context: `"Funeral Blues" by W.H. Auden
+      context: `"Funeral Blues" Analysis Guide
 
-Stop all the clocks, cut off the telephone,
-Prevent the dog from barking with a juicy bone,
-Silence the pianos and with muffled drum
-Bring out the coffin, let the mourners come.
+1. First Reading (3-4 min):
+   • Note emotional impact
+   • Mark striking phrases
+   • Identify speaker's tone
 
-Let aeroplanes circle moaning overhead
-Scribbling on the sky the message 'He is Dead'.
-Put crepe bows round the white necks of the public doves,
-Let the traffic policemen wear black cotton gloves.
+2. Structure Analysis (4-5 min):
+   • Four quatrains (4-line stanzas)
+   • Regular rhythm
+   • Impact of form on meaning
 
-He was my North, my South, my East and West,
-My working week and my Sunday rest,
-My noon, my midnight, my talk, my song;
-I thought that love would last forever: I was wrong.
+3. Language Analysis (5-6 min):
+   Commands/Imperatives:
+   • "Stop all the clocks"
+   • "Cut off the telephone"
+   • Effect: urgency/authority
 
-The stars are not wanted now; put out every one,
-Pack up the moon and dismantle the sun,
-Pour away the ocean and sweep up the wood;
-For nothing now can ever come to any good.`,
+   Metaphors:
+   • "He was my North, my South"
+   • "Pack up the moon"
+   • Effect: total loss/world-stopping grief
+
+   Progression:
+   • Public → Private grief
+   • Material → Cosmic scale
+   • Order → Chaos
+
+4. Writing Response (15 min):
+   Introduction:
+   • Name poem and poet
+   • State main focus
+   
+   Body Paragraphs:
+   • One main point per paragraph
+   • Quote + Analysis + Effect
+   • Link to question focus
+
+   Conclusion:
+   • Summarize main ideas
+   • Link to overall meaning
+
+Remember:
+• Always link techniques to meaning
+• Consider progression through poem
+• Show how form reflects content`,
       question: "Discuss how the poet uses imagery and structure to convey the depth of grief in this poem. In your response, consider:\n1. The progression of imagery from public to personal loss\n2. The use of imperatives and their effect\n3. The significance of cosmic imagery in the final stanza\n4. How form and structure reinforce meaning",
       markingCriteria: [
         "Detailed analysis of poetic devices",
@@ -259,19 +309,4 @@ For nothing now can ever come to any good.`,
 
 Consider this extract:
 
-"In vain have I struggled. It will not do. My feelings will not be repressed. You must allow me to tell you how ardently I admire and love you."
-
-Elizabeth's astonishment was beyond expression. She stared, coloured, doubted, and was silent. This he considered sufficient encouragement; and the avowal of all that he felt, and had long felt for her, immediately followed. He spoke well; but there were feelings besides those of the heart to be detailed; and he was not more eloquent on the subject of tenderness than of pride. His sense of her inferiority—of its being a degradation—of the family obstacles which had always opposed to inclination, were dwelt on with a warmth which seemed due to the consequence he was wounding, but was very unlikely to recommend his suit.`,
-      question: "Analyze how Austen uses this scene to explore themes of pride and social expectations. Consider:\n1. Character presentation\n2. Narrative technique\n3. Social context",
-      markingCriteria: [
-        "Analysis of characterization",
-        "Discussion of narrative methods",
-        "Understanding of social context",
-        "Relevant textual references",
-        "Coherent argument structure"
-      ],
-      marks: 20,
-      explanation: "Response should demonstrate understanding of both literary techniques and historical context."
-    }
-  ]
-};
+"In vain have I struggled. It will not do. My feelings will not be repressed.

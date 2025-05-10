@@ -11,20 +11,33 @@ export const mathsPaper1Quiz1: Quiz = {
       type: 'math',
       context: `Solve the quadratic equation: x² - 5x + 6 = 0
 
-Method 1 - Factorization:
-1. Look for factors p, q where:
-   p + q = -5 (coefficient of x)
-   p × q = 6 (constant term)
-2. Find: p = -2, q = -3
-3. Therefore: x² - 5x + 6 = (x - 2)(x - 3) = 0
-4. Solve: x = 2 or x = 3
+Problem-solving strategy:
+1. Identify the type of equation
+   - Standard form: ax² + bx + c
+   - Here: a=1, b=-5, c=6
+
+2. Choose your method:
+   a) Factoring
+      - Look for factors of c (6) that add to b (-5)
+      - Try: 6=2×3 or 6=1×6 or 6=(-2)×(-3)
+   
+   b) Quadratic Formula
+      - x = [-b ± √(b² - 4ac)] ÷ 2a
+      - Substitute values
+
+3. Work through solution:
+   Method 1 - Factorization:
+   • Factors of 6: (1,6), (2,3), (-1,-6), (-2,-3)
+   • Need sum = -5
+   • -2 and -3 work because: (-2)+(-3) = -5
+   Therefore: x² - 5x + 6 = (x - 2)(x - 3) = 0
+   So: x = 2 or x = 3
 
 Method 2 - Quadratic Formula:
-1. Use x = [-b ± √(b² - 4ac)] / 2a
-2. Here: a = 1, b = -5, c = 6
-3. x = [5 ± √(25 - 24)] / 2
-4. x = [5 ± 1] / 2
-5. x = 3 or 2`,
+x = [5 ± √(25 - 24)] ÷ 2
+x = [5 ± √1] ÷ 2
+x = [5 ± 1] ÷ 2
+x = 3 or 2`,
       question: "Solve: x² - 5x + 6 = 0",
       correctAnswer: "x = 2 \\text{ or } x = 3",
       acceptableAnswers: ["x = 3 \\text{ or } x = 2"],
@@ -58,59 +71,64 @@ export const mathsPaper1Quiz2: Quiz = {
   questions: [
     {
       id: 1,
-      type: 'math',
-      context: `Given the sequence: 2, 6, 18, 54, ...
+      context: `Problem: Find the derivative of f(x) = x³ - 4x² + 2x - 1
 
-Analysis:
-1. Find pattern:
-   • 2 × 3 = 6
-   • 6 × 3 = 18
-   • 18 × 3 = 54
-2. General term:
-   aₙ = 2 × 3ⁿ⁻¹
-3. First 4 terms:
-   n = 1: 2 × 3⁰ = 2
-   n = 2: 2 × 3¹ = 6
-   n = 3: 2 × 3² = 18
-   n = 4: 2 × 3³ = 54`,
-      question: "Find the general term (nth term) of this geometric sequence",
-      correctAnswer: "2 × 3^{n-1}",
+Approach this step-by-step:
+
+1. Recall the power rule:
+   • For x^n, derivative is nx^(n-1)
+   • Each term is handled separately
+
+2. Break down the function:
+   • Term 1: x³
+   • Term 2: -4x²
+   • Term 3: 2x
+   • Term 4: -1
+
+3. Apply power rule to each term:
+   • x³ → 3x²
+   • -4x² → -8x
+   • 2x → 2
+   • -1 → 0
+
+4. Combine like terms:
+   f'(x) = 3x² - 8x + 2
+
+Check your answer:
+• Are all terms differentiated correctly?
+• Did you apply the correct coefficients?
+• Did you handle the constant term properly?`,
+      question: "Find dy/dx for y = x³ - 4x² + 2x - 1",
+      correctAnswer: "3x^2 - 8x + 2",
       markingCriteria: [
-        "Pattern identification",
-        "First term (a)",
-        "Common ratio (r)",
-        "General term formula"
+        "Power rule application",
+        "Term differentiation",
+        "Term combination"
       ],
       marks: 4,
-      explanation: "Geometric sequence with a=2 and r=3"
+      explanation: "Step by step differentiation using power rule"
     },
     {
       id: 2,
       type: 'math',
-      context: `Arithmetic Series:
-1, 4, 7, 10, ..., 31
+      context: `Find ∫(2x + 3)dx
 
-To find sum:
-1. First term (a) = 1
-2. Last term (l) = 31
-3. Common difference (d) = 3
-4. Find n: 31 = 1 + (n-1)3
-   30 = 3n - 3
-   n = 11
-5. Use Sₙ = n(a + l)/2
-   = 11(1 + 31)/2
-   = 11 × 16
-   = 176`,
-      question: "Find the sum of this arithmetic sequence",
-      correctAnswer: "176",
+Method:
+1. Integrate term by term
+2. Increase power by 1, divide by new power for x term:
+   • ∫2x dx = x² + c
+3. For constant term:
+   • ∫3 dx = 3x
+4. Combine terms: x² + 3x + c`,
+      question: "Calculate ∫(2x + 3)dx",
+      correctAnswer: "x^2 + 3x + c",
       markingCriteria: [
-        "Identify sequence type",
-        "Find number of terms",
-        "Apply sum formula",
-        "Calculate accurately"
+        "Integration rules",
+        "Term integration",
+        "Adding constant"
       ],
-      marks: 6,
-      explanation: "Arithmetic sequence solution using sum formula"
+      marks: 3,
+      explanation: "Basic integration with constant of integration"
     }
   ]
 };
